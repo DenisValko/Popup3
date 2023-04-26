@@ -1,5 +1,5 @@
 package org.example.constants;
-
+//master
 public class constants {
 
     public static final String NAME_OF_NEW_PROJECT = "https://auto.html";
