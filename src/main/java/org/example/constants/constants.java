@@ -1,6 +1,7 @@
 package org.example.constants;
 
 public class constants {
+   // popup_make_del
 
     public static final String NAME_OF_NEW_PROJECT = "https://auto.html";
     //public static final String ENVIRONMENT ="https://pre.sendpulse.com/login/";  //прпепрод
