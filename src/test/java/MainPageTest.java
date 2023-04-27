@@ -1,6 +1,9 @@
 import org.junit.Test;
 
 public class MainPageTest extends BaseTest {
+    /**
+     * Тест создает и удаляет новый проект
+     */
 
     public final static String BASE_URL = "https://login.sendpulse.com/pop-ups/main";
 
@@ -11,7 +14,6 @@ public class MainPageTest extends BaseTest {
                 .clickGetCodeBtn().skipBtnClick().createPopupButtonCheck().pressCross()
                 .deleteProject();
 
-        //перенести в попап тесты
-       // new MainPage().enterProject();
+
     }
 }
