@@ -12,6 +12,6 @@ public class MainPageTest extends BaseTest {
                 .deleteProject();
 
         //перенести в попап тесты
-        new MainPage().enterProject();
+       // new MainPage().enterProject();
     }
 }
