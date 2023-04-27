@@ -7,8 +7,7 @@ public class PopupMakeTest extends BaseTest{
     @Test
     public void newPopup(){
 
-
         open(STATIC_PROJECT);
-        new PopupMakePage().makeNewPopup().ChoosePopup().ChooseImgPosition();
+        new PopupMakePage().makeNewPopup().choosePopup().chooseImgPosition().makeName().clickNext().clickSave().deletePopup();
     }
 }
