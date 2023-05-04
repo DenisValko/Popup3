@@ -11,7 +11,8 @@ abstract public class BaseTest {
         WebDriverManager.chromedriver().setup();
         Configuration.browser ="chrome";
         Configuration.driverManagerEnabled =true;
-        Configuration.browserSize ="1920x1080";
+        Configuration.startMaximized = true;
+       // Configuration.browserSize ="1920x1080";
         Configuration.headless = false;
         //Configuration.holdBrowserOpen =true;
         LoginPage loginPage = new LoginPage();
