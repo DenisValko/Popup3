@@ -14,7 +14,7 @@ abstract public class BaseTest {
         Configuration.startMaximized = true;
        // Configuration.browserSize ="1920x1080";
         Configuration.headless = false;
-        //Configuration.holdBrowserOpen =true;
+        Configuration.holdBrowserOpen =true;
         LoginPage loginPage = new LoginPage();
         loginPage.login();
 

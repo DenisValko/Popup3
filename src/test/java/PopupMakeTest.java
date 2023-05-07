@@ -6,8 +6,12 @@ import static org.example.constants.constants.STATIC_PROJECT;
 public class PopupMakeTest extends BaseTest{
     @Test
     public void newPopup(){
-
-        open(STATIC_PROJECT);
-        new PopupMakePage().makeNewPopup().choosePopup().chooseImgPosition().makeName().clickNext().clickSave().deletePopup();
+        for (int i=1; i<7; i++) {
+            open(STATIC_PROJECT);
+            /**
+             * choosePopup задает номер оверлейного попапа, значения 1-11
+             */
+            new PopupMakePage().makeNewPopup().choosePopup(i).chooseImgPosition().makeName().clickNext().clickSave().deletePopup();
+        }
     }
 }
