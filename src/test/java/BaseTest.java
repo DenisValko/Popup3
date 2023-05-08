@@ -12,6 +12,7 @@ abstract public class BaseTest {
         Configuration.browser ="chrome";
         Configuration.driverManagerEnabled =true;
         Configuration.startMaximized = true;
+        Configuration.timeout = 20000;
        // Configuration.browserSize ="1920x1080";
         Configuration.headless = false;
         Configuration.holdBrowserOpen =true;

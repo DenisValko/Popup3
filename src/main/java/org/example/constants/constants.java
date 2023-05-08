@@ -8,4 +8,5 @@ public class constants {
     public static final String ENVIRONMENT ="https://login.sendpulse.com/login/";   //прод
     public static final String PASS = "123456";
     public static final String LOGIN = "d.valko+prod_auto@sendpulse.com";
+    public static final String CLIENT_URL = "https://denisvalko.github.io/d.valko+prod_auto.html";
 }
