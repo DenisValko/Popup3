@@ -9,4 +9,4 @@
 /build
 /build/*
 /target
-/idea
+/.idea/*
