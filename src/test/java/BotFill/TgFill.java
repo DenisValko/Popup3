@@ -1,4 +1,4 @@
-package Bot_fill;
+package BotFill;
 import com.codeborne.selenide.Condition;
 
 import static org.example.constants.constants.*;

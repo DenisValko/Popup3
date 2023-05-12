@@ -1,4 +1,4 @@
-package Bot_fill;
+package BotFill;
 
 import static org.example.constants.constants.*;
 public class WaFill {

@@ -1,5 +1,5 @@
-import Bot_fill.FbFill;
-import Bot_fill.TgFill;
+import BotFill.FbFill;
+import BotFill.TgFill;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
@@ -109,8 +109,8 @@ public class PopupMakePage {
 
     public PopupMakePage deletePopup() {
         CLICK_ON_POPUP.click();
-        DELETE_POPUP_MENU_BTN.click();
-        POPUP_DEL_BTN.click();
+        DELETE_POPUP_MENU_BTN.shouldBe(Condition.visible).click();
+        POPUP_DEL_BTN.shouldBe(Condition.visible).click();
         MODAL_DEL_BTN.click();
         return new PopupMakePage();
     }

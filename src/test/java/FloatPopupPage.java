@@ -1,4 +1,4 @@
-import Bot_fill.*;
+import BotFill.*;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
@@ -51,6 +51,7 @@ public class FloatPopupPage {
                 break;
             case 4:
                 POPUP_FLOAT4.click();
+//                                                                                    поменять на  fill
                 //дропдаун
                 WATSAPP_BOT_CHOOSE_DD.click();
                 //customLink
@@ -61,17 +62,10 @@ public class FloatPopupPage {
                 //choose bot
                 TELEGRAM_BOT_PICK.click();
                 TELEGRAM_CHAIN.shouldBe(Condition.visible);
-
                 break;
             case 5:
                 POPUP_FLOAT5.click();
-//                FB_BOT_CHOOSE_DD.click();
-//                FB_MESSENGER_CUSTOM_LINK_INPUT.sendKeys("https://m.me/example!!!!!");
                 new FbFill();
-//                TG_BOT_CHOOSE_DD.click();
-//                //choose bot
-//                TELEGRAM_BOT_PICK.click();
-//                TELEGRAM_CHAIN.shouldBe(Condition.visible);
                 new TgFill();
                 new InstaFill();
                 break;
@@ -84,10 +78,6 @@ public class FloatPopupPage {
                 $x("(//button[@class='btn btn-delete btn-active'])[1]").click();
                 $x("(//button[@class='btn btn-delete btn-active'])[1]").click();
                 new CustomLinkFill();
-//                new TgFill();
-//                new FbFill();
-//                new WaFill();
-//                new InstaFill();
                 break;
             case 8:
                 POPUP_FLOAT8.click();
@@ -101,6 +91,7 @@ public class FloatPopupPage {
                 break;
             case 11:
                 POPUP_FLOAT11.click();
+                //удаление кнопок мессенджеров      ***** поправить*********
                 $x("(//button[@class='btn btn-delete btn-active'])[1]").click();
                 $x("(//button[@class='btn btn-delete btn-active'])[1]").click();
                 $x("(//button[@class='btn btn-delete btn-active'])[1]").click();
@@ -156,11 +147,8 @@ public class FloatPopupPage {
             case 27:
                 POPUP_FLOAT27.click();
                 break;
-
-
         }
         return this;
-
     }
 
 }
