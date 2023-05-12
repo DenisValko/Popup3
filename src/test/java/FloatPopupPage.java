@@ -37,6 +37,7 @@ public class FloatPopupPage {
     private final SelenideElement POPUP_FLOAT27 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/christmas-005-ru.png']");
 
 
+
     public FloatPopupPage floatPopupChoose(int i) {
         MENU_FLOAT.click();
         switch (i) {
