@@ -1,8 +1,5 @@
 package Pages;
 
-import BotFill.FbFill;
-import BotFill.TgFill;
-import BotFill.WaFill;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -24,7 +21,7 @@ public class HorizontalPopupPage {
     private final SelenideElement POPUP_HORIZ10 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/stickybar-supportua-ru.png']");
     private final SelenideElement POPUP_HORIZ11 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/bar-cookies-001-ru.png']");
 
-    public HorizontalPopupPage horizontalPopupChoose(int i) {
+    public void horizontalPopupChoose(int i) {
         MENU_HORIZONTAL.click();
         switch (i) {
             case 1:
@@ -69,6 +66,5 @@ public class HorizontalPopupPage {
                 break;
 
         }
-        return this;
     }
 }

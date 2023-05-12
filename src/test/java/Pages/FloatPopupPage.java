@@ -40,7 +40,7 @@ public class FloatPopupPage {
 
 
 
-    public FloatPopupPage floatPopupChoose(int i) {
+    public void floatPopupChoose(int i) {
         MENU_FLOAT.click();
         switch (i) {
             case 1:
@@ -151,7 +151,6 @@ public class FloatPopupPage {
                 POPUP_FLOAT27.click();
                 break;
         }
-        return this;
     }
 
 }

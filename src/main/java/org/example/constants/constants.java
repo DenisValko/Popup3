@@ -50,6 +50,8 @@ public class constants {
 
  //сохранить попап
  public static final SelenideElement SAVE_BTN = $x("//button[contains(text(),'Сохранить и опубликовать')]");
+ //сохранить и закрыть лаунчер без связки с попапом
+ public static final SelenideElement SAVE_AND_CLOSE = $x("(//button[contains(text(),'Сохранить и закрыть')])[1]");
 
  //переимменовать попап
  public static final SelenideElement EDITNAME_BTN = $x("//span[@class='sp-icon icon-ap-edit color-light']");
@@ -58,6 +60,9 @@ public class constants {
  public static final SelenideElement OLD_NAME_POPUP = $x("//app-input-text[@formcontrolname='name']//input[@type='text']");
 
 
+//инпут ссылки ютуба
+ public static final SelenideElement YOUTUBE_INPUT = $x("(//input[@placeholder='Добавьте ссылку на YouTube '])[1]");
+ public static final String YOUTUBE_INPUT_LINK = "https://www.youtube.com/watch?v=Ae829mFAGGE&ab_channel=RHINO";
 
 
 
