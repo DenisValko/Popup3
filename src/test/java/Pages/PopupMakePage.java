@@ -1,3 +1,5 @@
+package Pages;
+
 import BotFill.FbFill;
 import BotFill.TgFill;
 import com.codeborne.selenide.Condition;
