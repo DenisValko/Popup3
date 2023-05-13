@@ -1,3 +1,4 @@
+import Client.ClientCheck;
 import Pages.HorizontalPopupPage;
 import Pages.PopupMakePage;
 import org.junit.Test;
@@ -13,7 +14,11 @@ public class HorizontalPopupTest extends BaseTest{
             System.out.println(i);
             new PopupMakePage().makeNewPopup();
             new HorizontalPopupPage().horizontalPopupChoose(i);
-            new PopupMakePage().makeName().clickNext().clickSave().deletePopup();
+            new PopupMakePage().makeName().clickNext().clickSave();
+
+            new ClientCheck().clientCheck();
+
+            new PopupMakePage().deletePopup();
 
         }
     }
