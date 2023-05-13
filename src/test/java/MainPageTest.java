@@ -1,3 +1,4 @@
+import Pages.MainPage;
 import org.junit.Test;
 
 public class MainPageTest extends BaseTest {
@@ -9,7 +10,7 @@ public class MainPageTest extends BaseTest {
 
     @Test
     public void createProj() {
-        // MainPage mainPage = new MainPage();
+        // Pages.MainPage mainPage = new Pages.MainPage();
         new MainPage().openPage(BASE_URL).makeNewProject().makeProjectName()
                 .clickGetCodeBtn().skipBtnClick().createPopupButtonCheck().pressCross()
                 .deleteProject();

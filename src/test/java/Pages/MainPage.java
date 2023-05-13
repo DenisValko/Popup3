@@ -1,3 +1,5 @@
+package Pages;
+
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
@@ -19,7 +21,7 @@ public class MainPage {
     private final SelenideElement projectMenu = $x("(//span[@class='glyphicon glyphicon-option-horizontal color-light'])[1]");
     private final SelenideElement nameOfProjectKill = $x("//a[contains(text(),'Удалить')]");
     private final SelenideElement pressDel = $x("//button[contains(text(),'Удалить')]");
-    private final SelenideElement enterProj = $x("//h4[normalize-space()='denisvalko.github.io']");
+
 
     public MainPage openPage(String url) {
         open(url);
@@ -55,15 +57,11 @@ public class MainPage {
         Selenide.element(crossBtn).click();
         return new MainPage();
     }
-    public MainPage deleteProject() {
+    public void deleteProject() {
         Selenide.element(projectMenu).click();
         Selenide.element(nameOfProjectKill).click();
         Selenide.element(pressDel).click();
-        return new MainPage();
+        new MainPage();
     }
 
-    public MainPage enterProject() {
-        Selenide.element(enterProj).click();
-        return new MainPage();
-    }
 }
