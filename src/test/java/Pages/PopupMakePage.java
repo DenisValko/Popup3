@@ -111,8 +111,8 @@ public class PopupMakePage {
 
     public PopupMakePage deletePopup() {
         CLICK_ON_POPUP.click();
-        DELETE_POPUP_MENU_BTN.shouldBe(Condition.visible).click();
-        POPUP_DEL_BTN.shouldBe(Condition.visible).click();
+        DELETE_POPUP_MENU_BTN.shouldBe(Condition.enabled).click();
+        POPUP_DEL_BTN.shouldBe(Condition.enabled).click();
         MODAL_DEL_BTN.click();
         return new PopupMakePage();
     }
