@@ -77,9 +77,10 @@ public class FloatPopupPage {
                 break;
             case 7:
                 POPUP_FLOAT7.click();
-                $x("(//button[@class='btn btn-delete btn-active'])[1]").click();
-                $x("(//button[@class='btn btn-delete btn-active'])[1]").click();
-                $x("(//button[@class='btn btn-delete btn-active'])[1]").click();
+                DELETE_MESSENGER.click();
+                DELETE_MESSENGER.click();
+                DELETE_MESSENGER.click();
+//                $x("(//button[@class='btn btn-delete btn-active'])[1]").click();
                 new CustomLinkFill();
                 break;
             case 8:
@@ -95,9 +96,9 @@ public class FloatPopupPage {
             case 11:
                 POPUP_FLOAT11.click();
                 //удаление кнопок мессенджеров      ***** поправить*********
-                $x("(//button[@class='btn btn-delete btn-active'])[1]").click();
-                $x("(//button[@class='btn btn-delete btn-active'])[1]").click();
-                $x("(//button[@class='btn btn-delete btn-active'])[1]").click();
+                DELETE_MESSENGER.click();
+                DELETE_MESSENGER.click();
+                DELETE_MESSENGER.click();
                 new CustomLinkFill();
                 break;
             case 12:

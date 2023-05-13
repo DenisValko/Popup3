@@ -48,6 +48,7 @@ public class constants {
  //кнопка некст при редактировании попапа
  public static final SelenideElement NEXT_BTN = $x("//button[contains(text(),'Далее')]");
 
+
  //сохранить попап
  public static final SelenideElement SAVE_BTN = $x("//button[contains(text(),'Сохранить и опубликовать')]");
  //сохранить и закрыть лаунчер без связки с попапом

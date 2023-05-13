@@ -29,7 +29,7 @@ public class PopupMakePage {
     private final SelenideElement POPUP_OVERLAY11 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/christmas-002-ru.png']");
 
     private final SelenideElement DELETE_POPUP_MENU_BTN = $x("//button[@id='button-animated']");
-    private final SelenideElement POPUP_DEL_BTN = $x("//a[contains(text(),'Удалить')]");
+    private final SelenideElement POPUP_DEL_BTN = $x("(//a[contains(text(),'Удалить')])[1]");
     private final SelenideElement MODAL_DEL_BTN = $x("//button[contains(text(),'Удалить')]");
 
 
@@ -115,5 +115,6 @@ public class PopupMakePage {
         POPUP_DEL_BTN.shouldBe(Condition.enabled).click();
         MODAL_DEL_BTN.click();
         return new PopupMakePage();
+
     }
 }
