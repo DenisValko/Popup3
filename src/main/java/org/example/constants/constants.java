@@ -1,5 +1,6 @@
 package org.example.constants;
 import com.codeborne.selenide.SelenideElement;
+
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
@@ -43,7 +44,17 @@ public class constants {
 
  //выбор положения картинки
  public static final SelenideElement IMAGE_POSITION1 = $("img[src='assets/images/ic-left-pic.svg']");
- public static final SelenideElement IMAGE_POSITION2 = $x("//app-image-settings//div[2]//label[1]");
+ public static final SelenideElement IMAGE_POSITION2 = $("img[src='assets/images/ic-right-pic.svg']");
+ public static final SelenideElement IMAGE_POSITION3 = $("img[src='assets/images/ic-top-pic.svg']");
+ public static final SelenideElement IMAGE_POSITION4 = $("img[src='assets/images/ic-bg-pic.svg']");
+
+
+ //расположение попапа
+ public static final SelenideElement LOCATION1 =   $x("//select[@formcontrolname='position']");
+ public static final SelenideElement LOCATION1DOWNLEFT =   $x("//option[@value='5']");
+
+
+
 
  //кнопка некст при редактировании попапа
  public static final SelenideElement NEXT_BTN = $x("//button[contains(text(),'Далее')]");

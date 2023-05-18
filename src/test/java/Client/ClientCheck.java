@@ -24,15 +24,3 @@ public class ClientCheck {
 }
 
 
-
-//
-//                if (driver.getTitle().equals("ERROR_TITLE 400")){
-//                System.out.println("********************************** Mail pigeons wont fly :( **************************************");
-//                driver.quit();
-//                }
-//                driver.switchTo().window((String) tabs41.get(0));
-//                // вставить проверку на 400 ошибку
-//
-//                //assert driver.findElement(By.linkText("ERROR_HOME"))
-//
-//                ArrayList tabs2 = new ArrayList(driver.getWindowHandles());

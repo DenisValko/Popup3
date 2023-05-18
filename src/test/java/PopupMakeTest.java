@@ -1,6 +1,8 @@
 import Pages.PopupMakePage;
 import org.junit.Test;
 
+import java.util.Random;
+
 import static com.codeborne.selenide.Selenide.open;
 import static org.example.constants.constants.STATIC_PROJECT;
 
@@ -13,7 +15,9 @@ public class PopupMakeTest extends BaseTest{
              * choosePopup задает номер оверлейного попапа, значения 1-11
              */
             System.out.println(i);
-            new PopupMakePage().makeNewPopup().choosePopup(i).chooseImgPosition().makeName().clickNext().clickSave().deletePopup();
+            Random random = new Random();
+            int j =random.nextInt(4)+1;
+            new PopupMakePage().makeNewPopup().choosePopup(i).chooseImgPosition(j).makeName().clickNext().clickSave().deletePopup();
         }
     }
 }
