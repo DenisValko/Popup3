@@ -50,8 +50,8 @@ public class constants {
 
 
  //расположение попапа
- public static final SelenideElement LOCATION1 =   $x("//select[@formcontrolname='position']");
- public static final SelenideElement LOCATION1DOWNLEFT =   $x("//option[@value='5']");
+ public static final SelenideElement LOCATION =   $x("//select[@formcontrolname='position']");
+ // public static final SelenideElement LOCATION1DOWNLEFT =   $x("//option[@value='5']");                                    это наверно удалить
 
 
 

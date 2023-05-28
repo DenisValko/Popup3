@@ -7,24 +7,30 @@ import org.junit.Before;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 
+
+
 abstract public class BaseTest {
     public void setUp(){
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-notifications");
+        //options.addArguments("--disable-notifications");
+        options.addArguments("--disable-extensions");
+        //options.addArguments("--window-size=1024,768");
         Configuration.browserCapabilities.setCapability(ChromeOptions.CAPABILITY, options);
         WebDriverManager.chromedriver().setup();
         Configuration.browser ="chrome";
         Configuration.driverManagerEnabled =true;
         Configuration.startMaximized = true;
+
         Configuration.timeout = 20000;
 
 
-//        Configuration.headless = false;
-//        Configuration.holdBrowserOpen =true;
+        Configuration.headless = false;
+        Configuration.holdBrowserOpen =true;
         Configuration.headless = true;
         Configuration.holdBrowserOpen =false;
         LoginPage loginPage = new LoginPage();
         loginPage.login();
+
 
 
     }

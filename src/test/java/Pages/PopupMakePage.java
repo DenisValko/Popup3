@@ -5,7 +5,6 @@ import BotFill.TgFill;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 
@@ -119,13 +118,13 @@ public class PopupMakePage {
 
     public PopupMakePage location() {
 
-        Select select = new Select(LOCATION1);
+        Select select = new Select(LOCATION);
         select.selectByIndex(1);
         //select.selectByVisibleText("Справа");
 /**
  *          ВОТ ТУТ ЕЩЕ НАВАЯТЬ РАНДОМ С ПОЛОЖЕНИЕМ
  */
-        return new PopupMakePage();
+        return this;
     }
 
     public PopupMakePage makeName() {
@@ -134,17 +133,17 @@ public class PopupMakePage {
 
         EDITNAME_INPUT_BTN.sendKeys("autopopup");
         EDITNAME_INPUT_BTN.pressEnter();
-        return new PopupMakePage();
+        return this;
     }
 
     public PopupMakePage clickNext() {
         NEXT_BTN.click();
-        return new PopupMakePage();
+        return this;
     }
 
     public PopupMakePage clickSave() {
         SAVE_BTN.click();
-        return new PopupMakePage();
+        return this;
     }
 
     public PopupMakePage deletePopup() {
@@ -152,8 +151,8 @@ public class PopupMakePage {
 
         DELETE_POPUP_MENU_BTN.shouldBe(Condition.enabled).click();
         POPUP_DEL_BTN.shouldBe(Condition.enabled).click();
-        MODAL_DEL_BTN.click();
-        return new PopupMakePage();
+        MODAL_DEL_BTN.shouldBe(Condition.enabled).click();
+        return this;
 
     }
 }
