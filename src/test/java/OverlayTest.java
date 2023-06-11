@@ -6,9 +6,9 @@ import java.util.Random;
 import static com.codeborne.selenide.Selenide.*;
 import static org.example.constants.constants.STATIC_PROJECT;
 
-public class PopupMakeTest extends BaseTest{
+public class OverlayTest extends BaseTest{
     @Test
-    public void newPopup(){
+    public void overlay(){
         for (int i=1; i<=11; i++) {
             open(STATIC_PROJECT);
 
@@ -19,6 +19,7 @@ public class PopupMakeTest extends BaseTest{
             Random random = new Random();
             int j =random.nextInt(4)+1;
             new PopupMakePage().makeNewPopup().choosePopup(i).chooseImgPosition(j).makeName().clickNext().clickSave().deletePopup();
+
         }
     }
 }

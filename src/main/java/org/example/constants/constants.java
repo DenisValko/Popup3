@@ -76,6 +76,7 @@ public class constants {
  public static final SelenideElement YOUTUBE_INPUT = $x("(//input[@placeholder='Добавьте ссылку на YouTube '])[1]");
  public static final String YOUTUBE_INPUT_LINK = "https://www.youtube.com/watch?v=Ae829mFAGGE&ab_channel=RHINO";
 
-
-
+// Клиентская сторона
+ public static final String BASE_URL = "https://login.sendpulse.com/";
+ public static final String BODY_SHOW_USER_PLAN = "{\"query\":\"\\n    query showUserPlans($first: Int, $filter: ShowUserPlansFilterInterface, $locale: String!) {\\n  showUserPlans(first: $first, filter: $filter, locale: $locale) {\\n    edges {\\n      status\\n      planId\\n      userOptions {\\n        code\\n        amount\\n      }\\n    }\\n    result(locale: $locale) {\\n      code\\n      errors {\\n        message\\n        field\\n      }\\n    }\\n  }\\n}\\n    \",\"variables\":{\"filter\":{\"widget\":\"ceb77478-19c6-4d70-b1a2-c3b28a9abd72\"},\"locale\":\"ru\",\"first\":1}}";
 }
