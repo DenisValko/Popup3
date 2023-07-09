@@ -8,6 +8,7 @@ public class MainPageTest extends BaseTest {
 
     public final static String BASE_URL = "https://login.sendpulse.com/pop-ups/main";
 
+
     @Test
     public void createProj() {
         // Pages.MainPage mainPage = new Pages.MainPage();

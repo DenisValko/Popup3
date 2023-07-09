@@ -1,5 +1,8 @@
 import Pages.PopupMakePage;
+import com.codeborne.selenide.WebDriverRunner;
 import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.Random;
 
@@ -11,6 +14,8 @@ public class OverlayTest extends BaseTest{
     public void overlay(){
         for (int i=1; i<=11; i++) {
             open(STATIC_PROJECT);
+
+
 
             /**
              * choosePopup задает номер оверлейного попапа, значения 1-11

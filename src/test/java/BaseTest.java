@@ -7,6 +7,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+
 abstract public class BaseTest {
     public void setUp(){
         ChromeOptions options = new ChromeOptions();
@@ -21,12 +22,11 @@ abstract public class BaseTest {
         Configuration.timeout = 10000;
 
 
-        Configuration.headless = false;
-        Configuration.holdBrowserOpen =true;
-//        Configuration.headless = true;
-//        Configuration.holdBrowserOpen =false;
+//        Configuration.holdBrowserOpen =true;
+        Configuration.headless = true;
         LoginPage loginPage = new LoginPage();
         loginPage.login();
+
 
     }
 
