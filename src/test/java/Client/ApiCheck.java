@@ -27,4 +27,23 @@ public class ApiCheck {
                 .and().body("data.showUserPlans.result.code", equalTo(200));
 
     }
+    public void ShowPopup() {
+
+        RestAssured.baseURI = BASE_URL;
+        String query = BODY_SHOW_USER_PLAN;
+        System.out.println("api_шоуПопап");
+        given()
+                .header("Host", "login.sendpulse.com")
+                .header("content-type", "Application/json")
+                //.log().all()
+                .body(query)
+                .when()//.log().all()
+                .post("api/pop-ups/schema")
+                .then()
+                .assertThat().statusCode(200)
+                .and().body("data.showUserPlans.edges[0].status",
+                        equalTo(1))
+                .and().body("data.showUserPlans.result.code", equalTo(200));
+
+    }
 }

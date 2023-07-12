@@ -54,7 +54,7 @@ public class FloatPopupPage {
                 break;
             case 4:
                 POPUP_FLOAT4.click();
-//                                                                                    поменять на  fill
+//                       поменять на  fill
                 //дропдаун
                 WATSAPP_BOT_CHOOSE_DD.click();
                 //customLink

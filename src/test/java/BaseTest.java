@@ -22,8 +22,8 @@ abstract public class BaseTest {
         Configuration.timeout = 10000;
 
 
-//        Configuration.holdBrowserOpen =true;
-        Configuration.headless = true;
+        Configuration.holdBrowserOpen =true;
+//        Configuration.headless = true;
         LoginPage loginPage = new LoginPage();
         loginPage.login();
 

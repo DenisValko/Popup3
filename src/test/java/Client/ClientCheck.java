@@ -13,7 +13,10 @@ public class ClientCheck {
         executeJavaScript("window.open()");
         switchTo().window(1);
         open(CLIENT_URL);
-        $(shadowCss(".sp-popup-image.svelte-1h1sv9n","sp-popups")).shouldBe(Condition.visible);
+        $(shadowCss(".sp-popup-image","sp-popups")).shouldBe(Condition.visible);
+        System.out.println("Popup is ok");
+        $(shadowCss(".sp-poweredby-link","sp-popups")).shouldBe(Condition.visible);
+        System.out.println("Branding is OK");
         Selenide.closeWindow();
         Selenide.switchTo().window(0);
 
