@@ -30,8 +30,9 @@ public class PopupMakePage {
     private final SelenideElement POPUP_OVERLAY10 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/overlay-img-mess-002-ru.png']");
     private final SelenideElement POPUP_OVERLAY11 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/christmas-002-ru.png']");
 
-   // private final SelenideElement DELETE_POPUP_MENU_BTN = $x("(//button[@id='button-animated'])[1]");
-    private final SelenideElement DELETE_POPUP_MENU_BTN = $(By.id("button-animated"));
+    private final SelenideElement DELETE_POPUP_MENU_BTN = $("div.project-preview-heading> div > div.btn-group> div");
+//    private final SelenideElement DELETE_POPUP_MENU_BTN = $(By.id("button-animated"));
+//    private final SelenideElement DELETE_POPUP_MENU_BTN = $(By.id("default dropdown-toggle"));
     /**
      * Если не будет падать тест топеределать поиск по id на постоянку
      */

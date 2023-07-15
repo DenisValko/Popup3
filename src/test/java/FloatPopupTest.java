@@ -24,6 +24,7 @@ public class FloatPopupTest extends BaseTest{
                     .clickNext()
 
               .clickSave().deletePopup();
+
         }
     }
 }
