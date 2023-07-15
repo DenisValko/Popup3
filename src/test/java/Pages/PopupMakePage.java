@@ -4,6 +4,8 @@ import BotFill.FbFill;
 import BotFill.TgFill;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.Select;
 
 
 import static com.codeborne.selenide.Selenide.$;
@@ -28,7 +30,13 @@ public class PopupMakePage {
     private final SelenideElement POPUP_OVERLAY10 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/overlay-img-mess-002-ru.png']");
     private final SelenideElement POPUP_OVERLAY11 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/christmas-002-ru.png']");
 
-    private final SelenideElement DELETE_POPUP_MENU_BTN = $x("//button[@id='button-animated']");
+    private final SelenideElement DELETE_POPUP_MENU_BTN = $("div.project-preview-heading> div > div.btn-group> div");
+//    private final SelenideElement DELETE_POPUP_MENU_BTN = $(By.id("button-animated"));
+//    private final SelenideElement DELETE_POPUP_MENU_BTN = $(By.id("default dropdown-toggle"));
+    /**
+     * Если не будет падать тест топеределать поиск по id на постоянку
+     */
+
     private final SelenideElement POPUP_DEL_BTN = $x("(//a[contains(text(),'Удалить')])[1]");
     private final SelenideElement MODAL_DEL_BTN = $x("//button[contains(text(),'Удалить')]");
 
@@ -85,9 +93,39 @@ public class PopupMakePage {
     }
 
 
-    public PopupMakePage chooseImgPosition() {
-        IMAGE_POSITION1.click();
-        return new PopupMakePage();
+    public PopupMakePage chooseImgPosition(int j) {
+        if (IMAGE_POSITION2.exists()) {
+            switch (j) {
+                case 1:
+                    IMAGE_POSITION1.click();
+                    System.out.println("ImagePosition " + j);
+                    break;
+                case 2:
+                    IMAGE_POSITION2.click();
+                    System.out.println("ImagePosition " + j);
+                    break;
+                case 3:
+                    IMAGE_POSITION3.click();
+                    System.out.println("ImagePosition " + j);
+                    break;
+                case 4:
+                    IMAGE_POSITION4.click();
+                    System.out.println("ImagePosition " + j);
+                    break;
+            }
+        }
+        return this;
+    }
+
+    public PopupMakePage location() {
+
+        Select select = new Select(LOCATION);
+        select.selectByIndex(1);
+        //select.selectByVisibleText("Справа");
+/**
+ *          ВОТ ТУТ ЕЩЕ НАВАЯТЬ РАНДОМ С ПОЛОЖЕНИЕМ
+ */
+        return this;
     }
 
     public PopupMakePage makeName() {
@@ -96,25 +134,26 @@ public class PopupMakePage {
 
         EDITNAME_INPUT_BTN.sendKeys("autopopup");
         EDITNAME_INPUT_BTN.pressEnter();
-        return new PopupMakePage();
+        return this;
     }
 
     public PopupMakePage clickNext() {
         NEXT_BTN.click();
-        return new PopupMakePage();
+        return this;
     }
 
     public PopupMakePage clickSave() {
         SAVE_BTN.click();
-        return new PopupMakePage();
+        return this;
     }
 
     public PopupMakePage deletePopup() {
         CLICK_ON_POPUP.click();
+
         DELETE_POPUP_MENU_BTN.shouldBe(Condition.enabled).click();
         POPUP_DEL_BTN.shouldBe(Condition.enabled).click();
-        MODAL_DEL_BTN.click();
-        return new PopupMakePage();
+        MODAL_DEL_BTN.shouldBe(Condition.enabled).click();
+        return this;
 
     }
 }

@@ -1,5 +1,6 @@
 package org.example.constants;
 import com.codeborne.selenide.SelenideElement;
+
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
@@ -43,7 +44,17 @@ public class constants {
 
  //выбор положения картинки
  public static final SelenideElement IMAGE_POSITION1 = $("img[src='assets/images/ic-left-pic.svg']");
- public static final SelenideElement IMAGE_POSITION2 = $x("//app-image-settings//div[2]//label[1]");
+ public static final SelenideElement IMAGE_POSITION2 = $("img[src='assets/images/ic-right-pic.svg']");
+ public static final SelenideElement IMAGE_POSITION3 = $("img[src='assets/images/ic-top-pic.svg']");
+ public static final SelenideElement IMAGE_POSITION4 = $("img[src='assets/images/ic-bg-pic.svg']");
+
+
+ //расположение попапа
+ public static final SelenideElement LOCATION =   $x("//select[@formcontrolname='position']");
+ // public static final SelenideElement LOCATION1DOWNLEFT =   $x("//option[@value='5']");                                    это наверно удалить
+
+
+
 
  //кнопка некст при редактировании попапа
  public static final SelenideElement NEXT_BTN = $x("//button[contains(text(),'Далее')]");
@@ -65,6 +76,7 @@ public class constants {
  public static final SelenideElement YOUTUBE_INPUT = $x("(//input[@placeholder='Добавьте ссылку на YouTube '])[1]");
  public static final String YOUTUBE_INPUT_LINK = "https://www.youtube.com/watch?v=Ae829mFAGGE&ab_channel=RHINO";
 
-
-
+// Клиентская сторона
+ public static final String BASE_URL = "https://login.sendpulse.com/";
+ public static final String BODY_SHOW_USER_PLAN = "{\"query\":\"\\n    query showUserPlans($first: Int, $filter: ShowUserPlansFilterInterface, $locale: String!) {\\n  showUserPlans(first: $first, filter: $filter, locale: $locale) {\\n    edges {\\n      status\\n      planId\\n      userOptions {\\n        code\\n        amount\\n      }\\n    }\\n    result(locale: $locale) {\\n      code\\n      errors {\\n        message\\n        field\\n      }\\n    }\\n  }\\n}\\n    \",\"variables\":{\"filter\":{\"widget\":\"ceb77478-19c6-4d70-b1a2-c3b28a9abd72\"},\"locale\":\"ru\",\"first\":1}}";
 }

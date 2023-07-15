@@ -1,5 +1,6 @@
 import Pages.HorizontalPopupPage;
 import Pages.PopupMakePage;
+
 import org.junit.Test;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -13,8 +14,8 @@ public class HorizontalPopupTest extends BaseTest{
             System.out.println(i);
             new PopupMakePage().makeNewPopup();
             new HorizontalPopupPage().horizontalPopupChoose(i);
-            new PopupMakePage().makeName().clickNext().clickSave().deletePopup();
-
+            new PopupMakePage().makeName().clickNext().clickSave();
+            new PopupMakePage().deletePopup();
         }
     }
 }
