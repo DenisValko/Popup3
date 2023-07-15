@@ -23,8 +23,9 @@ abstract public class BaseTest {
         Configuration.driverManagerEnabled =true;
         Configuration.startMaximized = true;
         Configuration.timeout = 10000;
-        Configuration.holdBrowserOpen =true;
-//        Configuration.headless = true;
+
+//        Configuration.holdBrowserOpen =true;
+        Configuration.headless = true;
         LoginPage loginPage = new LoginPage();
         loginPage.login();
         Cookie cookie = WebDriverRunner.getWebDriver().manage().getCookieNamed("oauth_access_token");
