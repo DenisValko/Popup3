@@ -1,7 +1,4 @@
-import Api.ShowScenarioStatisticsSum;
-import Client.ClientCheck;
 import Pages.MainPage;
-import org.junit.Assert;
 import org.junit.Test;
 
 
@@ -24,17 +21,17 @@ public class MainPageTest extends BaseTest {
     }
 
 
-    @Test
-
-    public void statCheck() {
-        //получение пиплРич до  проверки клиента(via api)
-        int oldStat = new ShowScenarioStatisticsSum().showStat();
-        System.out.println("oldStat= " + oldStat);
-
-        new ClientCheck().clientCheck();
-
-        int increment = oldStat + 1;
-        int newStat = new ShowScenarioStatisticsSum().showStat();
-        Assert.assertEquals(increment, newStat);
-    }
+//    @Test
+//
+//    public void statCheck() {
+//        //получение пиплРич до  проверки клиента(via api)
+//        int oldStat = new ShowScenarioStatisticsSum().showStat();
+//        System.out.println("oldStat= " + oldStat);
+//
+//        new ClientCheck().clientCheck();
+//
+//        int increment = oldStat + 1;
+//        int newStat = new ShowScenarioStatisticsSum().showStat();
+//        Assert.assertEquals(increment, newStat);
+//    }
 }

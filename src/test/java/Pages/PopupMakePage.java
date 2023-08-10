@@ -37,7 +37,9 @@ public class PopupMakePage {
      * Если не будет падать тест топеределать поиск по id на постоянку
      */
 
-    private final SelenideElement POPUP_DEL_BTN = $x("(//a[contains(text(),'Удалить')])[1]");
+    private final SelenideElement LAUNCHER_POPUP_DEL_BTN = $x("(//a[contains(text(),'Удалить')])[1]");
+    private final SelenideElement POPUP_DEL_BTN = $("#dropdown-animated > li:nth-child(2)");
+
     private final SelenideElement MODAL_DEL_BTN = $x("//button[contains(text(),'Удалить')]");
 
 
@@ -150,9 +152,24 @@ public class PopupMakePage {
     public PopupMakePage deletePopup() {
         CLICK_ON_POPUP.click();
 
-        DELETE_POPUP_MENU_BTN.shouldBe(Condition.enabled).click();
+        DELETE_POPUP_MENU_BTN.shouldBe(Condition.enabled).shouldBe(Condition.visible).click();
+        System.out.println("вызов меню");
         POPUP_DEL_BTN.shouldBe(Condition.enabled).click();
+        System.out.println("клик на Удалить");
         MODAL_DEL_BTN.shouldBe(Condition.enabled).click();
+        System.out.println("клик на Удалить В модалке");
+        return this;
+
+    }
+    public PopupMakePage deleteLauncher() {
+        CLICK_ON_POPUP.click();
+
+        DELETE_POPUP_MENU_BTN.shouldBe(Condition.enabled).shouldBe(Condition.visible).click();
+        System.out.println("вызов меню");
+        LAUNCHER_POPUP_DEL_BTN.shouldBe(Condition.enabled).click();
+        System.out.println("клик на Удалить");
+        MODAL_DEL_BTN.shouldBe(Condition.enabled).click();
+        System.out.println("клик на Удалить В модалке");
         return this;
 
     }
