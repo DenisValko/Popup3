@@ -1,10 +1,7 @@
 package Pages;
 
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Cookie;
-
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static org.example.constants.constants.*;
@@ -13,6 +10,7 @@ public class LoginPage {
     private final SelenideElement LOGIN_INPUT = $(By.cssSelector("#login"));
     private final SelenideElement PASS_INPUT = $(By.cssSelector("#password"));
     private final SelenideElement SUBMIT_BTN = $(By.cssSelector("button[name='submit']"));
+    private final SelenideElement ENTER_ACCOUNT = $(By.cssSelector("#session-limit-free-tariff > div > div > div.modal-footer > button.btn.btn-success.moder-ok"));
 
 //    public void login() {
 //        open(ENVIRONMENT);
@@ -25,6 +23,10 @@ public class LoginPage {
         LOGIN_INPUT.sendKeys(LOGIN);
         PASS_INPUT.sendKeys(PASS);
         SUBMIT_BTN.click();
+        boolean isNeedEnter = ENTER_ACCOUNT.isDisplayed();
+        if (isNeedEnter){
+            ENTER_ACCOUNT.click();
+        }
 //        /**
 //         * Получаем токен
 //         */

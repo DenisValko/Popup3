@@ -11,7 +11,6 @@ public class MainPageTest extends BaseTest {
 
 
     @Test
-
     public void createProj() {
 
         new MainPage().openPage(BASE_URL).makeNewProject().makeProjectName()
@@ -19,19 +18,4 @@ public class MainPageTest extends BaseTest {
                 .deleteProject();
 
     }
-
-
-//    @Test
-//
-//    public void statCheck() {
-//        //получение пиплРич до  проверки клиента(via api)
-//        int oldStat = new ShowScenarioStatisticsSum().showStat();
-//        System.out.println("oldStat= " + oldStat);
-//
-//        new ClientCheck().clientCheck();
-//
-//        int increment = oldStat + 1;
-//        int newStat = new ShowScenarioStatisticsSum().showStat();
-//        Assert.assertEquals(increment, newStat);
-//    }
 }

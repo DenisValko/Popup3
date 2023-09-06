@@ -4,7 +4,6 @@ import BotFill.FbFill;
 import BotFill.TgFill;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 
 
@@ -144,10 +143,29 @@ public class PopupMakePage {
         return this;
     }
 
+
+
+
+
     public PopupMakePage clickSave() {
-        SAVE_BTN.click();
+
+
+            SAVE_BTN.click();
+            System.out.println("новая кнопка");
+        boolean isButtonDisplayed = SAVE_BTN_ALERT.isDisplayed();
+        if(isButtonDisplayed){
+            System.out.println("старая кнопка");
+            SAVE_BTN_ALERT.click();
+        }
+
         return this;
     }
+
+
+
+
+
+
 
     public PopupMakePage deletePopup() {
         CLICK_ON_POPUP.click();
