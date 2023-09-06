@@ -1,4 +1,5 @@
 package Client;
+
 import io.restassured.RestAssured;
 
 import static io.restassured.RestAssured.given;
@@ -27,7 +28,8 @@ public class ApiCheck {
                 .and().body("data.showUserPlans.result.code", equalTo(200));
 
     }
-    public void ShowPopup() {
+
+    public void showPopup() {
 
         RestAssured.baseURI = BASE_URL;
         String query = BODY_SHOW_USER_PLAN;

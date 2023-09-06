@@ -17,7 +17,7 @@ public class LauncherTest  extends BaseTest{
             new LauncherPage().LauncherPageChoose(i);
             new PopupMakePage().makeName().clickNext();
             new LauncherPage().saveAndClose();
-            new PopupMakePage().deletePopup();
+            new PopupMakePage().deleteLauncher();
         }
     }
 

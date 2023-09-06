@@ -4,7 +4,6 @@ import BotFill.FbFill;
 import BotFill.TgFill;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 
 
@@ -37,7 +36,9 @@ public class PopupMakePage {
      * Если не будет падать тест топеределать поиск по id на постоянку
      */
 
-    private final SelenideElement POPUP_DEL_BTN = $x("(//a[contains(text(),'Удалить')])[1]");
+    private final SelenideElement LAUNCHER_POPUP_DEL_BTN = $x("(//a[contains(text(),'Удалить')])[1]");
+    private final SelenideElement POPUP_DEL_BTN = $("#dropdown-animated > li:nth-child(2)");
+
     private final SelenideElement MODAL_DEL_BTN = $x("//button[contains(text(),'Удалить')]");
 
 
@@ -142,17 +143,51 @@ public class PopupMakePage {
         return this;
     }
 
+
+
+
+
     public PopupMakePage clickSave() {
-        SAVE_BTN.click();
+
+
+            SAVE_BTN.click();
+            System.out.println("новая кнопка");
+        boolean isButtonDisplayed = SAVE_BTN_ALERT.isDisplayed();
+        if(isButtonDisplayed){
+            System.out.println("старая кнопка");
+            SAVE_BTN_ALERT.click();
+        }
+
         return this;
     }
+
+
+
+
+
+
 
     public PopupMakePage deletePopup() {
         CLICK_ON_POPUP.click();
 
-        DELETE_POPUP_MENU_BTN.shouldBe(Condition.enabled).click();
+        DELETE_POPUP_MENU_BTN.shouldBe(Condition.enabled).shouldBe(Condition.visible).click();
+        System.out.println("вызов меню");
         POPUP_DEL_BTN.shouldBe(Condition.enabled).click();
+        System.out.println("клик на Удалить");
         MODAL_DEL_BTN.shouldBe(Condition.enabled).click();
+        System.out.println("клик на Удалить В модалке");
+        return this;
+
+    }
+    public PopupMakePage deleteLauncher() {
+        CLICK_ON_POPUP.click();
+
+        DELETE_POPUP_MENU_BTN.shouldBe(Condition.enabled).shouldBe(Condition.visible).click();
+        System.out.println("вызов меню");
+        LAUNCHER_POPUP_DEL_BTN.shouldBe(Condition.enabled).click();
+        System.out.println("клик на Удалить");
+        MODAL_DEL_BTN.shouldBe(Condition.enabled).click();
+        System.out.println("клик на Удалить В модалке");
         return this;
 
     }
