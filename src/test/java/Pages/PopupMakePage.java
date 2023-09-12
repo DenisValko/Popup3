@@ -13,10 +13,8 @@ import static org.example.constants.constants.*;
 
 public class PopupMakePage {
     private final SelenideElement MAKE_POPUP_BTN = $x("//a[contains(text(),'Добавить попап')]");
-
     //выбор типа попапа - оверлей
     private final SelenideElement MENU_OVERLAY = $x("(//a[@class='templates-nav-link'])[2]");
-
     private final SelenideElement POPUP_OVERLAY1 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/owerlay-discount-004-ru.png']");
     private final SelenideElement POPUP_OVERLAY2 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/3-overlay-ru.png']");
     private final SelenideElement POPUP_OVERLAY3 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/bf-004-ru.png']");
@@ -28,19 +26,10 @@ public class PopupMakePage {
     private final SelenideElement POPUP_OVERLAY9 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/overlay-img-003-ru.png']");
     private final SelenideElement POPUP_OVERLAY10 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/overlay-img-mess-002-ru.png']");
     private final SelenideElement POPUP_OVERLAY11 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/christmas-002-ru.png']");
-
     private final SelenideElement DELETE_POPUP_MENU_BTN = $("div.project-preview-heading> div > div.btn-group> div");
-//    private final SelenideElement DELETE_POPUP_MENU_BTN = $(By.id("button-animated"));
-//    private final SelenideElement DELETE_POPUP_MENU_BTN = $(By.id("default dropdown-toggle"));
-    /**
-     * Если не будет падать тест топеределать поиск по id на постоянку
-     */
-
     private final SelenideElement LAUNCHER_POPUP_DEL_BTN = $x("(//a[contains(text(),'Удалить')])[1]");
     private final SelenideElement POPUP_DEL_BTN = $("#dropdown-animated > li:nth-child(2)");
-
     private final SelenideElement MODAL_DEL_BTN = $x("//button[contains(text(),'Удалить')]");
-
 
 
     public PopupMakePage makeNewPopup() {
@@ -143,29 +132,17 @@ public class PopupMakePage {
         return this;
     }
 
-
-
-
-
     public PopupMakePage clickSave() {
-
-
-            SAVE_BTN.click();
-            System.out.println("новая кнопка");
+        SAVE_BTN.click();
+        System.out.println("новая кнопка");
         boolean isButtonDisplayed = SAVE_BTN_ALERT.isDisplayed();
-        if(isButtonDisplayed){
+        if (isButtonDisplayed) {
             System.out.println("старая кнопка");
             SAVE_BTN_ALERT.click();
         }
 
         return this;
     }
-
-
-
-
-
-
 
     public PopupMakePage deletePopup() {
         CLICK_ON_POPUP.click();
@@ -179,9 +156,9 @@ public class PopupMakePage {
         return this;
 
     }
+
     public PopupMakePage deleteLauncher() {
         CLICK_ON_POPUP.click();
-
         DELETE_POPUP_MENU_BTN.shouldBe(Condition.enabled).shouldBe(Condition.visible).click();
         System.out.println("вызов меню");
         LAUNCHER_POPUP_DEL_BTN.shouldBe(Condition.enabled).click();
