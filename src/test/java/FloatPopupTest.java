@@ -22,7 +22,7 @@ public class FloatPopupTest extends BaseTest {
             new FloatPopupPage().floatPopupChoose(i);
             new PopupMakePage().makeName().location().chooseImgPosition(j)
                     .clickNext()
-                    .clickSave().deletePopup();
+                    .clickSaveAndPublish().deleteAutoPopup();
 
         }
     }

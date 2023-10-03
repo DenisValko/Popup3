@@ -57,7 +57,8 @@ public class constants {
     public static final SelenideElement NEXT_BTN = $x("//button[contains(text(),'Далее')]");
 
     //сохранить попап
-    public static final SelenideElement SAVE_BTN = $x("//button[contains(text(),'Сохранить и опубликовать')]");
+    public static final SelenideElement SAVE_AND_PUBLISH_BTN = $x("//button[contains(text(),'Сохранить и опубликовать')]");
+    public static final SelenideElement SAVE_BTN = $("app-targeting > div > div > div > button");
     public static final SelenideElement SAVE_BTN_ALERT = $("body > modal-container > div.modal-dialog > div > app-confirm > div.modal-footer > button.btn.btn-success.ng-star-inserted");
 
     //сохранить и закрыть лаунчер без связки с попапом

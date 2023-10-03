@@ -16,7 +16,7 @@ public class OverlayTest extends BaseTest{
             System.out.println(i);
             Random random = new Random();
             int j =random.nextInt(4)+1;
-            new PopupMakePage().makeNewPopup().choosePopup(i).chooseImgPosition(j).makeName().clickNext().clickSave().deletePopup();
+            new PopupMakePage().makeNewPopup().choosePopup(i).chooseImgPosition(j).makeName().clickNext().clickSaveAndPublish().deleteAutoPopup();
 
         }
     }
