@@ -14,13 +14,18 @@ abstract public class BaseTest {
         ChromeOptions options = new ChromeOptions();
         //options.addArguments("--disable-notifications"); //для head
         options.addArguments("--disable-extensions");      //для headless
-        options.addArguments("--window-size=2048,1600");
+        options.addArguments("--window-size=2048,1900");
         Configuration.browserCapabilities.setCapability(ChromeOptions.CAPABILITY, options);
+
+//        WebDriverManager.firefoxdriver().setup();
+//        Configuration.browser = "firefox";
+
         WebDriverManager.chromedriver().setup();
         Configuration.browser = "chrome";
         Configuration.driverManagerEnabled = true;
         Configuration.startMaximized = true;
         Configuration.timeout = 10000;
+
 //        Configuration.holdBrowserOpen =true;
         Configuration.headless = true;
         LoginPage loginPage = new LoginPage();

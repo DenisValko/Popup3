@@ -119,7 +119,7 @@ public class PopupMakePage {
         return this;
     }
     public PopupMakePage conditionClickOnLauncher() {
-        CONDITION.selectOption("Показывать только по клику на лаунчер");
+        CONDITION.selectOption("После клика на лаунчер");
         return this;
     }
 //    }    public PopupMakePage conditionClickOnLauncher() {
