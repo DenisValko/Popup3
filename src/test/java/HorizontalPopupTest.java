@@ -14,8 +14,8 @@ public class HorizontalPopupTest extends BaseTest{
             System.out.println(i);
             new PopupMakePage().makeNewPopup();
             new HorizontalPopupPage().horizontalPopupChoose(i);
-            new PopupMakePage().makeName().clickNext().clickSave();
-            new PopupMakePage().deletePopup();
+            new PopupMakePage().makeName().clickNext().clickSaveAndPublish();
+            new PopupMakePage().deleteAutoPopup();
         }
     }
 }

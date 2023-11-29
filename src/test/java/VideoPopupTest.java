@@ -15,7 +15,7 @@ public class VideoPopupTest  extends BaseTest{
             open(STATIC_PROJECT);
             new PopupMakePage().makeNewPopup();
             new VideoPopupPage().videoPopupChoose(i);
-            new PopupMakePage().makeName().clickNext().clickSave().deletePopup();
+            new PopupMakePage().makeName().clickNext().clickSaveAndPublish().deleteAutoPopup();
         }
     }
 

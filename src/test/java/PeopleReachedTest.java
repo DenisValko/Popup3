@@ -5,8 +5,6 @@ import org.junit.Test;
 public class PeopleReachedTest extends BaseTest{
     @Test
             public void StatCheck() {
-
-
         //получение пиплРич до  проверки клиента(via api)
         int oldStat = new ShowScenarioStatisticsSum().showStat();
         System.out.println("oldStat= " + oldStat);
