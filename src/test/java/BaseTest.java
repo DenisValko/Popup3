@@ -19,7 +19,7 @@ abstract public class BaseTest {
 
 //        WebDriverManager.firefoxdriver().setup();
 //        Configuration.browser = "firefox";
-
+//fdgdfgd
         WebDriverManager.chromedriver().setup();
         Configuration.browser = "chrome";
         Configuration.driverManagerEnabled = true;
