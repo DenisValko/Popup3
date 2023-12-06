@@ -15,9 +15,7 @@ public class LauncherTest  extends BaseTest{
             open(STATIC_PROJECT);
             new PopupMakePage().makeNewPopup();
             new LauncherPage().LauncherPageChoose(i);
-            new PopupMakePage().makeName().clickNext();
-            new LauncherPage().saveAndClose();
-            new PopupMakePage().deleteLauncher();
+            new PopupMakePage().makeName().clickNext().clickNext().saveAndClose().deleteLauncher();
         }
     }
 

@@ -19,15 +19,15 @@ abstract public class BaseTest {
 
 //        WebDriverManager.firefoxdriver().setup();
 //        Configuration.browser = "firefox";
-//fdgdfgd
+
         WebDriverManager.chromedriver().setup();
         Configuration.browser = "chrome";
         Configuration.driverManagerEnabled = true;
         Configuration.startMaximized = true;
         Configuration.timeout = 10000;
 
-//        Configuration.holdBrowserOpen =true;
-        Configuration.headless = true;
+        Configuration.holdBrowserOpen =true;
+//        Configuration.headless = true;
         LoginPage loginPage = new LoginPage();
         loginPage.login();
     }
@@ -35,7 +35,7 @@ abstract public class BaseTest {
     @Before
     public void init() {
         setUp();
-        new ApiCheck().ShowUserPlans();
+//        new ApiCheck().ShowUserPlans();
     }
 
     @After

@@ -52,6 +52,7 @@ public class MainPage {
     public MainPage createPopupButtonCheck() {
         Selenide.element(createPopupBtn).should(Condition.appear);
         return new MainPage();
+
     }
     public MainPage pressCross() {
         Selenide.element(crossBtn).click();

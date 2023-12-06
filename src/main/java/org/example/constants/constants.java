@@ -6,15 +6,23 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class constants {
+
     // popup_make_del
-    public static final String STATIC_PROJECT = "https://login.sendpulse.com/pop-ups/project/ceb77478-19c6-4d70-b1a2-c3b28a9abd72/";
+//    public static final String STATIC_PROJECT = "https://login.sendpulse.com/pop-ups/project/ceb77478-19c6-4d70-b1a2-c3b28a9abd72/";
 //    public static final String STATIC_PROJECT = "https://pre.sendpulse.com/pop-ups/project/ceb77478-19c6-4d70-b1a2-c3b28a9abd72/";
+    public static final String STATIC_PROJECT = "https://popup-front-1.sendpulse.test/pop-ups/project/f7d0bf5f-e6b5-407e-bb0a-35a5f0246af6/popups";
     public static final String NAME_OF_NEW_PROJECT = "https://auto.html";
+//    public static final String BASE_URL = "https://login.sendpulse.com/";
+    public static final String BASE_URL = "https://popup-front-1.sendpulse.test/pop-ups";
+
 //    public static final String ENVIRONMENT ="https://pre.sendpulse.com/login/";  //прпепрод
-    public static final String ENVIRONMENT = "https://login.sendpulse.com/login/";   //прод
+//    public static final String ENVIRONMENT = "https://login.sendpulse.com/login/";   //прод
+    public static final String ENVIRONMENT = "https://popup-front-1.sendpulse.test/login";   //front1
+
     public static final String PASS = "123456";
     public static final String LOGIN = "d.valko+prod_auto@sendpulse.com";
-    public static final String CLIENT_URL = "https://denisvalko.github.io/d.valko+prod_auto.html";
+//    public static final String CLIENT_URL = "https://denisvalko.github.io/d.valko+prod_auto.html";
+    public static final String CLIENT_URL = "https://denisvalko.github.io/d.valko+prod_auto_front1.html";
 
     //locators
 
@@ -55,7 +63,7 @@ public class constants {
     public static final SelenideElement LOCATION = $x("//select[@formcontrolname='position']");
 
     //кнопка некст при редактировании попапа
-    public static final SelenideElement NEXT_BTN = $x("//button[contains(text(),'Далее')]");
+    public static final SelenideElement NEXT_BTN = $("app-btn-controls > div > button");
 
     //сохранить попап
     public static final SelenideElement SAVE_AND_PUBLISH_BTN = $x("//button[contains(text(),'Сохранить и опубликовать')]");
@@ -63,19 +71,26 @@ public class constants {
     public static final SelenideElement SAVE_BTN_ALERT = $("body > modal-container > div.modal-dialog > div > app-confirm > div.modal-footer > button.btn.btn-success.ng-star-inserted");
 
     //сохранить и закрыть лаунчер без связки с попапом
-    public static final SelenideElement SAVE_AND_CLOSE = $x("(//button[contains(text(),'Сохранить и закрыть')])[1]");
+
+    public static final SelenideElement SAVE_AND_CLOSE = $("app-btn-controls > div > button");
+//    public static final SelenideElement TARGET_NEXT = $("app-btn-controls > div > button");
 
     //переимменовать попап
-    public static final SelenideElement EDITNAME_BTN = $x("//span[@class='sp-icon icon-ap-edit color-light']");
-    public static final SelenideElement EDITNAME_INPUT_BTN = $x("//app-input-text[@formcontrolname='name']//input[@type='text']");
+    public static final SelenideElement EDITNAME_BTN = $(" span > i");
+    public static final SelenideElement EDITNAME_INPUT_BTN = $("app-popup-name > div");
     public static final SelenideElement CLICK_ON_POPUP = $x("//label[normalize-space()='autopopup']");
-    public static final SelenideElement OLD_NAME_POPUP = $x("//app-input-text[@formcontrolname='name']//input[@type='text']");
+    public static final SelenideElement POPUP_NAME_INPUT = $(" app-input-text > div > input");
+
+
+    public static final SelenideElement NO_LEAD_WARNING = $("app-confirm > div.modal-footer > button.btn.btn-success.ng-star-inserted");
+    public static final SelenideElement ELEMENTS = $(" app-builder > app-breadcrumb > ul > li.element-tab > a > img");
+
 
     //инпут ссылки ютуба
     public static final SelenideElement YOUTUBE_INPUT = $x("(//input[@placeholder='Добавьте ссылку на YouTube '])[1]");
     public static final String YOUTUBE_INPUT_LINK = "https://www.youtube.com/watch?v=Ae829mFAGGE&ab_channel=RHINO";
 
     // Клиентская сторона
-    public static final String BASE_URL = "https://login.sendpulse.com/";
+
     public static final String BODY_SHOW_USER_PLAN = "{\"query\":\"\\n    query showUserPlans($first: Int, $filter: ShowUserPlansFilterInterface, $locale: String!) {\\n  showUserPlans(first: $first, filter: $filter, locale: $locale) {\\n    edges {\\n      status\\n      planId\\n      userOptions {\\n        code\\n        amount\\n      }\\n    }\\n    result(locale: $locale) {\\n      code\\n      errors {\\n        message\\n        field\\n      }\\n    }\\n  }\\n}\\n    \",\"variables\":{\"filter\":{\"widget\":\"ceb77478-19c6-4d70-b1a2-c3b28a9abd72\"},\"locale\":\"ru\",\"first\":1}}";
 }

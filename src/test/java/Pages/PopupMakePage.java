@@ -14,18 +14,18 @@ import static org.example.constants.constants.*;
 public class PopupMakePage {
     private final SelenideElement MAKE_POPUP_BTN = $x("//a[contains(text(),'Добавить попап')]");
     //выбор типа попапа - оверлей
-    private final SelenideElement MENU_OVERLAY = $x("(//a[@class='templates-nav-link'])[2]");
-    private final SelenideElement POPUP_OVERLAY1 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/owerlay-discount-004-ru.png']");
-    private final SelenideElement POPUP_OVERLAY2 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/3-overlay-ru.png']");
-    private final SelenideElement POPUP_OVERLAY3 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/bf-004-ru.png']");
-    private final SelenideElement POPUP_OVERLAY4 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/Valentine%27sDay-002-ru.png']");
-    private final SelenideElement POPUP_OVERLAY5 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/Womens-Day-002-ru.png']");
-    private final SelenideElement POPUP_OVERLAY6 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/Womens-Day-005-ru.png']");
-    private final SelenideElement POPUP_OVERLAY7 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/overlay-img-mess-001-ru.png']");
-    private final SelenideElement POPUP_OVERLAY8 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/owerlay-0205-ru.png']");
-    private final SelenideElement POPUP_OVERLAY9 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/overlay-img-003-ru.png']");
-    private final SelenideElement POPUP_OVERLAY10 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/overlay-img-mess-002-ru.png']");
-    private final SelenideElement POPUP_OVERLAY11 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/christmas-002-ru.png']");
+    private final SelenideElement MENU_OVERLAY = $("app-sidebar > div > ul > li:nth-child(4) > a > span");
+    private final SelenideElement POPUP_OVERLAY1 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/owerlay-discount-004-ru.png']");
+    private final SelenideElement POPUP_OVERLAY2 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/3-overlay-ru.png']");
+    private final SelenideElement POPUP_OVERLAY3 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/bf-004-ru.png']");
+    private final SelenideElement POPUP_OVERLAY4 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/Valentine%27sDay-002-ru.png']");
+    private final SelenideElement POPUP_OVERLAY5 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/Womens-Day-002-ru.png']");
+    private final SelenideElement POPUP_OVERLAY6 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/Womens-Day-005-ru.png']");
+    private final SelenideElement POPUP_OVERLAY7 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/overlay-img-mess-001-ru.png']");
+    private final SelenideElement POPUP_OVERLAY8 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/owerlay-0205-ru.png']");
+    private final SelenideElement POPUP_OVERLAY9 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/overlay-img-003-ru.png']");
+    private final SelenideElement POPUP_OVERLAY10 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/overlay-img-mess-002-ru.png']");
+    private final SelenideElement POPUP_OVERLAY11 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/christmas-002-ru.png']");
     private final SelenideElement DELETE_POPUP_MENU_BTN = $("div.project-preview-heading> div > div.btn-group> div");
     private final SelenideElement LAUNCHER_POPUP_DEL_BTN = $x("(//a[contains(text(),'Удалить')])[1]");
     private final SelenideElement POPUP_DEL_BTN = $("#dropdown-animated > li:nth-child(2)");
@@ -35,6 +35,11 @@ public class PopupMakePage {
 
     public PopupMakePage makeNewPopup() {
         MAKE_POPUP_BTN.click();
+        return new PopupMakePage();
+    }
+
+    public PopupMakePage elements() {
+        ELEMENTS.click();
         return new PopupMakePage();
     }
 
@@ -84,61 +89,36 @@ public class PopupMakePage {
     }
 
 
-    public PopupMakePage chooseImgPosition(int j) {
-        if (IMAGE_POSITION2.exists()) {
-            switch (j) {
-                case 1:
-                    IMAGE_POSITION1.click();
-                    System.out.println("ImagePosition " + j);
-                    break;
-                case 2:
-                    IMAGE_POSITION2.click();
-                    System.out.println("ImagePosition " + j);
-                    break;
-                case 3:
-                    IMAGE_POSITION3.click();
-                    System.out.println("ImagePosition " + j);
-                    break;
-                case 4:
-                    IMAGE_POSITION4.click();
-                    System.out.println("ImagePosition " + j);
-                    break;
-            }
-        }
-        return this;
-    }
-
-    public PopupMakePage location() {
-
-        Select select = new Select(LOCATION);
-        select.selectByIndex(1);
-        //select.selectByVisibleText("Справа");
-/**
- *          ВОТ ТУТ ЕЩЕ НАВАЯТЬ РАНДОМ С ПОЛОЖЕНИЕМ
- */
-        return this;
-    }
     public PopupMakePage conditionClickOnLauncher() {
         CONDITION.selectOption("После клика на лаунчер");
         return this;
     }
-//    }    public PopupMakePage conditionClickOnLauncher() {
-//        Select select1 = new Select(CONDITION);
-//        select1.selectByIndex(23);
-//        return this;
-//    }
+
 
     public PopupMakePage makeName() {
         EDITNAME_BTN.click();
-        OLD_NAME_POPUP.clear();
-
-        EDITNAME_INPUT_BTN.sendKeys("autopopup");
-        EDITNAME_INPUT_BTN.pressEnter();
+        POPUP_NAME_INPUT.clear();
+        POPUP_NAME_INPUT.sendKeys("autopopup");
+        POPUP_NAME_INPUT.pressEnter();
         return this;
     }
 
     public PopupMakePage clickNext() {
         NEXT_BTN.click();
+        System.out.println("click next");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        return this;
+    }
+
+    public PopupMakePage saveAndClose () {
+        SAVE_AND_CLOSE.click();
+        if (NO_LEAD_WARNING.exists()){
+        NO_LEAD_WARNING.click();
+        }
         return this;
     }
 

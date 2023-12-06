@@ -9,14 +9,10 @@ public class OverlayTest extends BaseTest{
     public void overlay(){
         for (int i=1; i<=11; i++) {
             open(STATIC_PROJECT);
-
-            /**
-             * choosePopup задает номер оверлейного попапа, значения 1-11
-             */
             System.out.println(i);
             Random random = new Random();
             int j =random.nextInt(4)+1;
-            new PopupMakePage().makeNewPopup().choosePopup(i).chooseImgPosition(j).makeName().clickNext().clickSaveAndPublish().deleteAutoPopup();
+            new PopupMakePage().makeNewPopup().choosePopup(i).makeName().clickNext().clickNext().saveAndClose().deleteAutoPopup();
 
         }
     }

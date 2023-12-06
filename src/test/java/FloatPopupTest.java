@@ -20,9 +20,7 @@ public class FloatPopupTest extends BaseTest {
             open(STATIC_PROJECT);
             new PopupMakePage().makeNewPopup();
             new FloatPopupPage().floatPopupChoose(i);
-            new PopupMakePage().makeName().location().chooseImgPosition(j)
-                    .clickNext()
-                    .clickSaveAndPublish().deleteAutoPopup();
+            new PopupMakePage().makeName().clickNext().clickNext().saveAndClose().deleteAutoPopup();
 
         }
     }
