@@ -1,10 +1,9 @@
 package BotFill;
-import Pages.DesignPage;
 
-import static org.example.constants.constants.*;
 public class FbFill {
     public FbFill() {
-        new DesignPage().DesignPageElement()
+//        new NewDesignPage().ChoosePopupType();
+
 //        DesignPage.
     //        FB_BOT_CHOOSE_DD.click();
 //        FB_CUSTOM_LINK.click();

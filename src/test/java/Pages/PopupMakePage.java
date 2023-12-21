@@ -4,8 +4,6 @@ import BotFill.FbFill;
 import BotFill.TgFill;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.support.ui.Select;
-
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
@@ -35,11 +33,6 @@ public class PopupMakePage {
 
     public PopupMakePage makeNewPopup() {
         MAKE_POPUP_BTN.click();
-        return new PopupMakePage();
-    }
-
-    public PopupMakePage elements() {
-        ELEMENTS.click();
         return new PopupMakePage();
     }
 
@@ -102,7 +95,7 @@ public class PopupMakePage {
         POPUP_NAME_INPUT.pressEnter();
         return this;
     }
-
+//    @Deprecated
     public PopupMakePage clickNext() {
         NEXT_BTN.click();
         System.out.println("click next");

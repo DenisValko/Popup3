@@ -12,9 +12,13 @@ public class MainPageTest extends BaseTest {
     @Test
     public void createProj() {
 
-        new MainPage().openPage(BASE_URL).makeNewProject().makeProjectName().clickGetCodeBtn().skipBtnClick()
-//                .createPopupButtonCheck()
-                .pressCross().deleteProject();
+        new MainPage().openPage(BASE_URL)
+                .makeNewProject()
+                .makeProjectName()
+                .clickGetCodeBtn()
+                .skipBtnClick()
+                .pressCross()
+                .deleteProject();
 
     }
 }

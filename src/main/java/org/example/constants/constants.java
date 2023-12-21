@@ -72,7 +72,7 @@ public class constants {
 
     //сохранить и закрыть лаунчер без связки с попапом
 
-    public static final SelenideElement SAVE_AND_CLOSE = $("app-btn-controls > div > button");
+    public static final SelenideElement SAVE_AND_CLOSE = $("#content-wrapper > app-root > app-constructor > app-layout > div > nav > app-header > div > div.nav.navbar-nav > app-btn-controls > div > button.btn.btn-success.sp-navbar-btn.ng-star-inserted");
 //    public static final SelenideElement TARGET_NEXT = $("app-btn-controls > div > button");
 
     //переимменовать попап
@@ -93,4 +93,16 @@ public class constants {
     // Клиентская сторона
 
     public static final String BODY_SHOW_USER_PLAN = "{\"query\":\"\\n    query showUserPlans($first: Int, $filter: ShowUserPlansFilterInterface, $locale: String!) {\\n  showUserPlans(first: $first, filter: $filter, locale: $locale) {\\n    edges {\\n      status\\n      planId\\n      userOptions {\\n        code\\n        amount\\n      }\\n    }\\n    result(locale: $locale) {\\n      code\\n      errors {\\n        message\\n        field\\n      }\\n    }\\n  }\\n}\\n    \",\"variables\":{\"filter\":{\"widget\":\"ceb77478-19c6-4d70-b1a2-c3b28a9abd72\"},\"locale\":\"ru\",\"first\":1}}";
+
+
+    public static final SelenideElement SAVE_TO_ADDRESS_BOOK = $(" app-save-address-book");
+    public static final SelenideElement OPEN_ON_CLICK_AT_LAUNCHER = $("app-open-by-launcher > div");
+//Условия
+    public static final SelenideElement CONDITIONS = $("#content-wrapper > app-root > app-constructor > app-layout > div > app-targeting > div > div.panel-constructor-steps.panel-conditions.ng-tns-c323-9.ng-trigger.ng-trigger-fadeIn.ng-star-inserted > app-conditions > div > div.sp-table-targeting.ng-star-inserted > div > app-default-condition > div > div > app-scenarios > div > select");
+
+
+
+
+
+
 }

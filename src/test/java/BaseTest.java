@@ -26,16 +26,16 @@ abstract public class BaseTest {
         Configuration.startMaximized = true;
         Configuration.timeout = 10000;
 
-        Configuration.holdBrowserOpen =true;
+        Configuration.holdBrowserOpen = true;
 //        Configuration.headless = true;
         LoginPage loginPage = new LoginPage();
         loginPage.login();
+
     }
 
     @Before
     public void init() {
         setUp();
-//        new ApiCheck().ShowUserPlans();
     }
 
     @After
