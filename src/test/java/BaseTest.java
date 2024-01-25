@@ -1,4 +1,3 @@
-import Client.ApiCheck;
 import Pages.LoginPage;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
@@ -12,7 +11,7 @@ abstract public class BaseTest {
 
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--disable-notifications"); //для head
+        options.addArguments("--disable-notifications"); //для head
         options.addArguments("--disable-extensions");      //для headless
         options.addArguments("--window-size=2048,1900");
         Configuration.browserCapabilities.setCapability(ChromeOptions.CAPABILITY, options);

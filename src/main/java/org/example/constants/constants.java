@@ -8,21 +8,21 @@ import static com.codeborne.selenide.Selenide.$x;
 public class constants {
 
     // popup_make_del
-//    public static final String STATIC_PROJECT = "https://login.sendpulse.com/pop-ups/project/ceb77478-19c6-4d70-b1a2-c3b28a9abd72/";
+    public static final String STATIC_PROJECT = "https://login.sendpulse.com/pop-ups/project/ceb77478-19c6-4d70-b1a2-c3b28a9abd72/";
 //    public static final String STATIC_PROJECT = "https://pre.sendpulse.com/pop-ups/project/ceb77478-19c6-4d70-b1a2-c3b28a9abd72/";
-    public static final String STATIC_PROJECT = "https://popup-front-1.sendpulse.test/pop-ups/project/f7d0bf5f-e6b5-407e-bb0a-35a5f0246af6/popups";
+//    public static final String STATIC_PROJECT = "https://popup-front-1.sendpulse.test/pop-ups/project/f7d0bf5f-e6b5-407e-bb0a-35a5f0246af6/popups";
     public static final String NAME_OF_NEW_PROJECT = "https://auto.html";
-//    public static final String BASE_URL = "https://login.sendpulse.com/";
-    public static final String BASE_URL = "https://popup-front-1.sendpulse.test/pop-ups";
+    public static final String BASE_URL = "https://login.sendpulse.com/";
+//    public static final String BASE_URL = "https://popup-front-1.sendpulse.test/pop-ups";
 
 //    public static final String ENVIRONMENT ="https://pre.sendpulse.com/login/";  //прпепрод
-//    public static final String ENVIRONMENT = "https://login.sendpulse.com/login/";   //прод
-    public static final String ENVIRONMENT = "https://popup-front-1.sendpulse.test/login";   //front1
+    public static final String ENVIRONMENT = "https://login.sendpulse.com/login/";   //прод
+//    public static final String ENVIRONMENT = "https://popup-front-1.sendpulse.test/login";   //front1
 
     public static final String PASS = "123456";
     public static final String LOGIN = "d.valko+prod_auto@sendpulse.com";
-//    public static final String CLIENT_URL = "https://denisvalko.github.io/d.valko+prod_auto.html";
-    public static final String CLIENT_URL = "https://denisvalko.github.io/d.valko+prod_auto_front1.html";
+    public static final String CLIENT_URL = "https://denisvalko.github.io/d.valko+prod_auto.html";
+//    public static final String CLIENT_URL = "https://denisvalko.github.io/d.valko+prod_auto_front1.html";
 
     //locators
 
@@ -34,17 +34,17 @@ public class constants {
     public static final SelenideElement DELETE_MESSENGER = $x("(//span[@class='sp-icon icon-trash'])[1]");
 
     //ДД для бота
-    public static final SelenideElement TG_BOT_CHOOSE_DD = $x("(//div[@class='dropdown-custom-toggle'])[6]");
-    public static final SelenideElement FB_BOT_CHOOSE_DD = $x("(//div[@class='dropdown-custom-toggle'])[4]");
-    public static final SelenideElement INSTA_BOT_CHOOSE_DD = $x("(//div[@class='dropdown-custom-toggle'])[8]");
-    public static final SelenideElement WATSAPP_BOT_CHOOSE_DD = $x("(//div[@class='dropdown-custom-toggle'])[4]");
-    public static final SelenideElement CUSTOM_LINK_DD = $("div[class='dropdown-custom form-control'] span[class='caret']");
+//    public static final SelenideElement TG_BOT_CHOOSE_DD = $x("(//div[@class='dropdown-custom-toggle'])[6]");
+//    public static final SelenideElement FB_BOT_CHOOSE_DD = $x("(//div[@class='dropdown-custom-toggle'])[4]");
+//    public static final SelenideElement INSTA_BOT_CHOOSE_DD = $x("(//div[@class='dropdown-custom-toggle'])[8]");
+//    public static final SelenideElement WATSAPP_BOT_CHOOSE_DD = $x("(//div[@class='dropdown-custom-toggle'])[4]");
+//    public static final SelenideElement CUSTOM_LINK_DD = $("div[class='dropdown-custom form-control'] span[class='caret']");
 
     //выбор мессанджера и установка кастом ссылки
-    public static final SelenideElement FB_CUSTOM_LINK = $x("(//a[contains(text(),'Указать свою ссылку')])[1]");
-    public static final SelenideElement INSTA_CUSTOM_LINK = $x("(//a[@class='dropdown-item'][contains(text(),'Указать свою ссылку')])[3]");
-    public static final SelenideElement WATSAPP_CUSTOM_LINK = $x("(//a[@class='dropdown-item'][contains(text(),'Указать свою ссылку')])[3]");
-    public static final SelenideElement CUSTOM_LINK_CUSTOM_LINK = $x("//a[contains(text(),'Пользовательская ссылка')]");
+//    public static final SelenideElement FB_CUSTOM_LINK = $x("(//a[contains(text(),'Указать свою ссылку')])[1]");
+//    public static final SelenideElement INSTA_CUSTOM_LINK = $x("(//a[@class='dropdown-item'][contains(text(),'Указать свою ссылку')])[3]");
+//    public static final SelenideElement WATSAPP_CUSTOM_LINK = $x("(//a[@class='dropdown-item'][contains(text(),'Указать свою ссылку')])[3]");
+//    public static final SelenideElement CUSTOM_LINK_CUSTOM_LINK = $x("//a[contains(text(),'Пользовательская ссылка')]");
 
     public static final SelenideElement FB_MESSENGER_CUSTOM_LINK_INPUT = $("input[placeholder='https://m.me/example']");
     public static final SelenideElement WATSAPP_CUSTOM_LINK_INPUT = $("input[placeholder='https://wa.me/12341234567']");
@@ -60,7 +60,7 @@ public class constants {
 
 
     //расположение попапа
-    public static final SelenideElement LOCATION = $x("//select[@formcontrolname='position']");
+//    public static final SelenideElement LOCATION = $x("//select[@formcontrolname='position']");
 
     //кнопка некст при редактировании попапа
     public static final SelenideElement NEXT_BTN = $("app-btn-controls > div > button");
@@ -72,7 +72,7 @@ public class constants {
 
     //сохранить и закрыть лаунчер без связки с попапом
 
-    public static final SelenideElement SAVE_AND_CLOSE = $("#content-wrapper > app-root > app-constructor > app-layout > div > nav > app-header > div > div.nav.navbar-nav > app-btn-controls > div > button.btn.btn-success.sp-navbar-btn.ng-star-inserted");
+    public static final SelenideElement SAVE_AND_CLOSE = $("#content-wrapper > app-root > app-constructor > app-layout > div > nav > app-header > div > div > div.sp-navbar-header-right > app-btn-controls > div");
 //    public static final SelenideElement TARGET_NEXT = $("app-btn-controls > div > button");
 
     //переимменовать попап

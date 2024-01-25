@@ -16,8 +16,11 @@ public class ChoosePopupTypePage {
     private final SelenideElement POPUP_TYPE_LAUNCHER = $(" app-popup-type > div > ul > li:nth-child(6) > a");
     private final SelenideElement POPUP_TYPE_COLOR = $(" app-theme > select");
     private final SelenideElement POPUP_TYPE_LOCATION = $("div.form-group.form-style > app-position > select");
+    private final SelenideElement ELEMENT_BUTTON = $("app-breadcrumb > ul > li.body-tab > a");
+//    private final SelenideElement ELEMENT_BUTTON = $("#content-wrapper > app-root > app-constructor > app-layout > div > app-design > div > div.sp-constructor-settings.ng-tns-c276-6 > app-builder > app-breadcrumb > ul > li.body-tab");
 
     public ChoosePopupTypePage choosePopupType(@NotNull String type){
+        ELEMENT_BUTTON.click();
       POPUP_TYPE_DD.click();
       switch (type) {
           case "float":
