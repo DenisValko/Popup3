@@ -2,7 +2,15 @@ package Pages;
 
 import BotFill.*;
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Condition.text;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
@@ -11,14 +19,14 @@ import static org.example.constants.constants.*;
 public class FloatPopupPage {
     private final SelenideElement MENU_FLOAT = $x("(//span[contains(text(),'Плавающий')])[1]");
 //    private final SelenideElement POPUP_FLOAT1 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/popup-webinar-001-ru.png']");
-    private final SelenideElement POPUP_FLOAT1 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/popup-webinar-001-ru.png']");
-    private final SelenideElement POPUP_FLOAT2 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/popup-Guardo-002-ru.png']");
-    private final SelenideElement POPUP_FLOAT3 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/popup-bag-003-ru.png']");
-    private final SelenideElement POPUP_FLOAT4 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/popup-first-purchase-005-ru.png']");
-    private final SelenideElement POPUP_FLOAT5 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/Valentine%27sDay-004-ru.png']");
-    private final SelenideElement POPUP_FLOAT6 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/Valentine%27sDay-003-ru.png']");
-    private final SelenideElement POPUP_FLOAT7 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/bf-006-ru.png']");
-    private final SelenideElement POPUP_FLOAT8 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/bf-005-ru.png']");
+    private final SelenideElement POPUP_FLOAT1 = $("#content-wrapper > div.sp-templates > app-content > div > div:nth-child(2) > img");
+    private final SelenideElement POPUP_FLOAT2 = $("#content-wrapper > div.sp-templates > app-content > div > div:nth-child(3) > img");
+    private final SelenideElement POPUP_FLOAT3 = $("#content-wrapper > div.sp-templates > app-content > div > div:nth-child(4) > img");
+    private final SelenideElement POPUP_FLOAT4 = $("#content-wrapper > div.sp-templates > app-content > div > div:nth-child(5) > img");
+    private final SelenideElement POPUP_FLOAT5 = $("#content-wrapper > div.sp-templates > app-content > div > div:nth-child(6) > img");
+    private final SelenideElement POPUP_FLOAT6 = $("#content-wrapper > div.sp-templates > app-content > div > div:nth-child(7) > img");
+    private final SelenideElement POPUP_FLOAT7 = $("#content-wrapper > div.sp-templates > app-content > div > div:nth-child(8) > img");
+    private final SelenideElement POPUP_FLOAT8 = $("#content-wrapper > div.sp-templates > app-content > div > div:nth-child(9) > img");
     private final SelenideElement POPUP_FLOAT9 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/2-popup-ru.png']");
     private final SelenideElement POPUP_FLOAT10 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/Womens-Day-006-ru.png']");
     private final SelenideElement POPUP_FLOAT11 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/Womens-Day-003-ru.png']");
@@ -39,6 +47,10 @@ public class FloatPopupPage {
     private final SelenideElement POPUP_FLOAT26 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/christmas-006-ru.png']");
     private final SelenideElement POPUP_FLOAT27 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/christmas-005-ru.png']");
 
+    private final SelenideElement NPS = $(" app-nps-element > app-preview > div > div.panel-action-buttons > i.sp-icon.icon-ap-edit.color-light");
+    private final SelenideElement CHOOSE_VAR = $(" app-builder > div > app-element-editor > app-nps-element > app-editor > div > div:nth-child(1) > app-attributes > div > div");
+    private final SelenideElement FIRST_VAR = $(" li:nth-child(1) > a > span:nth-child(1) > span");
+
 
 
     public void floatPopupChoose(int i) {
@@ -46,6 +58,9 @@ public class FloatPopupPage {
         switch (i) {
             case 1:
                 POPUP_FLOAT1.click();
+                NPS.click();
+                CHOOSE_VAR.click();
+                FIRST_VAR.click();
                 break;
             case 2:
                 POPUP_FLOAT2.click();
@@ -55,16 +70,26 @@ public class FloatPopupPage {
                 break;
             case 4:
                 POPUP_FLOAT4.click();
-                ELEMENTS.click();
+                SelenideElement selenideElement = $("app-elements > app-custom-elements > div > app-messenger-element:nth-child(2) > app-preview > div > div.panel-action-buttons > i.sp-icon.icon-ap-edit.color-light");
+                selenideElement.click();
+                Selenide.$("app-builder > div > app-element-editor > app-messenger-element > app-editor > div > div.form-group.ng-star-inserted > div > div").click();
+                Selenide.$(" div.form-group.ng-star-inserted > div > ul > li:nth-child(3) > a").click();
+                Selenide.$(" app-builder > div > app-element-editor > app-messenger-element > app-editor > div > div:nth-child(3) > app-input-text > div > input").sendKeys("https:/wa.me/234234");
+//                ELEMENTS.click();
+
+//                $("#content-wrapper > app-root > app-constructor > app-layout > div > app-design > div > div.sp-constructor-main.ng-tns-c278-6 > app-popup-preview > div > app-desktop-preview > app-multiple > div").click();
+                $x("//span[contains(text(),'Telegram')]").click();
+
+
                 WATSAPP_BOT_CHOOSE_DD.click();
-                //customLink
-                FB_CUSTOM_LINK.shouldBe(Condition.visible).click();
-                WATSAPP_CUSTOM_LINK_INPUT.sendKeys("https://wa.me/12341234567");
-                //TelegaDD
-                TG_BOT_CHOOSE_DD.click();
-                //choose bot
-                TELEGRAM_BOT_PICK.click();
-                TELEGRAM_CHAIN.shouldBe(Condition.visible);
+//                //customLink
+//                FB_CUSTOM_LINK.shouldBe(Condition.visible).click();
+//                WATSAPP_CUSTOM_LINK_INPUT.sendKeys("https://wa.me/12341234567");
+//                //TelegaDD
+//                TG_BOT_CHOOSE_DD.click();
+//                //choose bot
+//                TELEGRAM_BOT_PICK.click();
+//                TELEGRAM_CHAIN.shouldBe(Condition.visible);
                 break;
             case 5:
                 POPUP_FLOAT5.click();

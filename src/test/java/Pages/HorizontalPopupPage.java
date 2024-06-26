@@ -8,7 +8,7 @@ import static org.example.constants.constants.FB_MESSENGER_CUSTOM_LINK_INPUT;
 import static org.example.constants.constants.WATSAPP_CUSTOM_LINK_INPUT;
 
 public class HorizontalPopupPage {
-    private final SelenideElement MENU_HORIZONTAL = $x("(//a[@class='templates-nav-link'])[4]");
+    private final SelenideElement MENU_HORIZONTAL = $(" app-sidebar > div > ul > li:nth-child(6) ");
     private final SelenideElement POPUP_HORIZ1 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/Valentine%27sDay-005-ru.png']");
     private final SelenideElement POPUP_HORIZ2 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/bf-001-ru.png']");
     private final SelenideElement POPUP_HORIZ3 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/Womens-Day-004-ru.png']");
@@ -40,15 +40,18 @@ public class HorizontalPopupPage {
                 POPUP_HORIZ5.click();
                 break;
             case 6:
-                POPUP_HORIZ6.click();
-                $x("(//div[@class='dropdown-custom-toggle'])[4]").click();
-                $x("(//a[contains(text(),'Указать свою ссылку')])[1]").click();
-                FB_MESSENGER_CUSTOM_LINK_INPUT.sendKeys("https://m.me/example!!!!!");
-                $x("(//div[@class='dropdown-custom-toggle'])[6]").click();
-                $x("(//a[contains(text(),'Указать свою ссылку')])[2]").click();
-                WATSAPP_CUSTOM_LINK_INPUT.sendKeys("https://m.me/WA!!!!!");
-
+                POPUP_HORIZ5.click();
                 break;
+//            case 6:
+//                POPUP_HORIZ6.click();
+//                $x("(//div[@class='dropdown-custom-toggle'])[4]").click();
+//                $x("(//a[contains(text(),'Указать свою ссылку')])[1]").click();
+//                FB_MESSENGER_CUSTOM_LINK_INPUT.sendKeys("https://m.me/example!!!!!");
+//                $x("(//div[@class='dropdown-custom-toggle'])[6]").click();
+//                $x("(//a[contains(text(),'Указать свою ссылку')])[2]").click();
+//                WATSAPP_CUSTOM_LINK_INPUT.sendKeys("https://m.me/WA!!!!!");
+//
+//                break;
             case 7:
                 POPUP_HORIZ7.click();
                 break;

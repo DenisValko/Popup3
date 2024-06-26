@@ -1,28 +1,29 @@
 package Pages;
 
 import com.codeborne.selenide.SelenideElement;
-import org.jetbrains.annotations.NotNull;
+//import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.support.ui.Select;
 
 import static com.codeborne.selenide.Selenide.$;
 
 public class ChoosePopupTypePage {
     private final SelenideElement POPUP_TYPE_DD = $(" app-popup-type > div > div");
-    private final SelenideElement POPUP_TYPE_FLOAT = $(" app-popup-type > div > ul > li:nth-child(1) > a");
-    private final SelenideElement POPUP_TYPE_MODAL = $(" app-popup-type > div > ul > li:nth-child(2) > a");
-    private final SelenideElement POPUP_TYPE_OVERLAY = $(" app-popup-type > div > ul > li:nth-child(3) > a");
-    private final SelenideElement POPUP_TYPE_STICKY = $(" app-popup-type > div > ul > li:nth-child(4) > a");
-    private final SelenideElement POPUP_TYPE_VIDEO = $(" app-popup-type > div > ul > li:nth-child(5) > a");
-    private final SelenideElement POPUP_TYPE_LAUNCHER = $(" app-popup-type > div > ul > li:nth-child(6) > a");
+    private final SelenideElement POPUP_TYPE_FLOAT = $("app-sidebar > div > ul > li:nth-child(5)");
+    private final SelenideElement POPUP_TYPE_MODAL = $("app-sidebar > div > ul > li:nth-child(8) > a");
+    private final SelenideElement POPUP_TYPE_OVERLAY = $("app-sidebar > div > ul > li:nth-child(4) > a");
+    private final SelenideElement POPUP_TYPE_STICKY = $("app-sidebar > div > ul > li:nth-child(6) > a");
+    private final SelenideElement POPUP_TYPE_VIDEO = $("app-sidebar > div > ul > li:nth-child(7) > a");
+    private final SelenideElement POPUP_TYPE_LAUNCHER = $("app-sidebar > div > ul > li:nth-child(9) > a");
+    private final SelenideElement POPUP_TYPE_NPS = $(" app-sidebar > div > ul > li:nth-child(10) > a");
     private final SelenideElement POPUP_TYPE_COLOR = $(" app-theme > select");
     private final SelenideElement POPUP_TYPE_LOCATION = $("div.form-group.form-style > app-position > select");
     private final SelenideElement ELEMENT_BUTTON = $("app-breadcrumb > ul > li.body-tab > a");
 //    private final SelenideElement ELEMENT_BUTTON = $("#content-wrapper > app-root > app-constructor > app-layout > div > app-design > div > div.sp-constructor-settings.ng-tns-c276-6 > app-builder > app-breadcrumb > ul > li.body-tab");
 
-    public ChoosePopupTypePage choosePopupType(@NotNull String type){
-        ELEMENT_BUTTON.click();
-      POPUP_TYPE_DD.click();
-      switch (type) {
+    public ChoosePopupTypePage choosePopupType(String type){
+//      POPUP_TYPE_DD.click();
+//        ELEMENT_BUTTON.click();
+        switch (type) {
           case "float":
               POPUP_TYPE_FLOAT.click();
               break;

@@ -10,7 +10,7 @@ public class NewMakePopupTest extends BaseTest{
     public void Create_Rename_Del(){
         new MainPage().openPage(STATIC_PROJECT);
         NewMakePopupPage nmpPage = new NewMakePopupPage();
-        nmpPage.newMakePopupPage();
+        nmpPage.newMakePopup();
         String type="float";
 //        "float" "modal""overlay""sticky" "video" "launcher":
 //          у флоат и стики есть choosePopupLocation

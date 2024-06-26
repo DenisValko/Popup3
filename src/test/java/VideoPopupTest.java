@@ -1,3 +1,4 @@
+import Pages.NewMakePopupPage;
 import Pages.PopupMakePage;
 import Pages.VideoPopupPage;
 import org.junit.Test;
@@ -15,7 +16,7 @@ public class VideoPopupTest  extends BaseTest{
             open(STATIC_PROJECT);
             new PopupMakePage().makeNewPopup();
             new VideoPopupPage().videoPopupChoose(i);
-            new PopupMakePage().makeName().clickNext().clickSaveAndPublish().deleteAutoPopup();
+            new NewMakePopupPage().clickNext().makeName().clickNext().saveAndClose().deleteAutoPopup();
         }
     }
 
