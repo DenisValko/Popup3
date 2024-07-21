@@ -9,21 +9,21 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 import static org.example.constants.constants.*;
 
-public class PopupMakePage {
+public class OverlayMakePage {
     private final SelenideElement MAKE_POPUP_BTN = $x("//a[contains(text(),'Добавить попап')]");
     //выбор типа попапа - оверлей
     private final SelenideElement MENU_OVERLAY = $("app-sidebar > div > ul > li:nth-child(4) > a > span");
-    private final SelenideElement POPUP_OVERLAY1 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/owerlay-discount-004-ru.png']");
-    private final SelenideElement POPUP_OVERLAY2 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/3-overlay-ru.png']");
-    private final SelenideElement POPUP_OVERLAY3 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/bf-004-ru.png']");
-    private final SelenideElement POPUP_OVERLAY4 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/Valentine%27sDay-002-ru.png']");
-    private final SelenideElement POPUP_OVERLAY5 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/Womens-Day-002-ru.png']");
-    private final SelenideElement POPUP_OVERLAY6 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/Womens-Day-005-ru.png']");
-    private final SelenideElement POPUP_OVERLAY7 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/overlay-img-mess-001-ru.png']");
-    private final SelenideElement POPUP_OVERLAY8 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/owerlay-0205-ru.png']");
-    private final SelenideElement POPUP_OVERLAY9 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/overlay-img-003-ru.png']");
-    private final SelenideElement POPUP_OVERLAY10 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/overlay-img-mess-002-ru.png']");
-    private final SelenideElement POPUP_OVERLAY11 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/christmas-002-ru.png']");
+    private final SelenideElement POPUP_OVERLAY1 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/bf-004-ru.png']");
+    private final SelenideElement POPUP_OVERLAY2 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/owerlay-discount-004-ru.png']");
+    private final SelenideElement POPUP_OVERLAY3 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/Womens-Day-002-ru.png']");
+    private final SelenideElement POPUP_OVERLAY4 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/3-overlay-ru.png']");
+    private final SelenideElement POPUP_OVERLAY5 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/overlay-img-mess-001-ru.png']");
+    private final SelenideElement POPUP_OVERLAY6 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/Womens-Day-005-ru.png']");
+    private final SelenideElement POPUP_OVERLAY7 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/owerlay-0205-ru.png']");
+    private final SelenideElement POPUP_OVERLAY8 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/Valentine%27sDay-002-ru.png']");
+    private final SelenideElement POPUP_OVERLAY9 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/overlay-img-003-ru.png']");
+    private final SelenideElement POPUP_OVERLAY10 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/overlay-img-mess-002-ru.png']");
+    private final SelenideElement POPUP_OVERLAY11 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/christmas-002-ru.png']");
     private final SelenideElement DELETE_POPUP_MENU_BTN = $("div.project-preview-heading> div > div.btn-group> div");
     private final SelenideElement LAUNCHER_POPUP_DEL_BTN = $x("(//a[contains(text(),'Удалить')])[1]");
     private final SelenideElement POPUP_DEL_BTN = $("#dropdown-animated > li:nth-child(2)");
@@ -31,12 +31,7 @@ public class PopupMakePage {
     private final SelenideElement CONDITION = $("select[class='form-control']");
 
 
-    public PopupMakePage makeNewPopup() {
-        MAKE_POPUP_BTN.click();
-        return new PopupMakePage();
-    }
-
-    public PopupMakePage choosePopup(int i) {
+    public OverlayMakePage overlayPopupChoose(int i) {
         MENU_OVERLAY.click();
         switch (i) {
             case 1:
@@ -59,11 +54,11 @@ public class PopupMakePage {
                 break;
             case 7:
                 POPUP_OVERLAY7.click();
+                new TgFill();
+                new FbFill();
                 break;
             case 8:
                 POPUP_OVERLAY8.click();
-                new FbFill();
-                new TgFill();
                 break;
             case 9:
                 POPUP_OVERLAY9.click();
@@ -78,28 +73,30 @@ public class PopupMakePage {
                 new TgFill();
                 break;
         }
-        return new PopupMakePage();
+        return new OverlayMakePage();
     }
 
 
-    public PopupMakePage conditionClickOnLauncher() {
+    public OverlayMakePage conditionClickOnLauncher() {
         CONDITION.selectOption("После клика на лаунчер");
         return this;
     }
 
 
-    public PopupMakePage makeName() {
+    public OverlayMakePage makeName() {
         EDITNAME_BTN.click();
         POPUP_NAME_INPUT.clear();
         POPUP_NAME_INPUT.sendKeys("autopopup");
         POPUP_NAME_INPUT.pressEnter();
         return this;
     }
-//    @Deprecated
-    public PopupMakePage clickNext() {
+    @Deprecated
+    public OverlayMakePage clickNext() {
         NEXT_BTN.click();
         System.out.println("click next");
         try {
+
+            // Нахуй переписать!!!!!!*************
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
@@ -107,7 +104,7 @@ public class PopupMakePage {
         return this;
     }
 
-    public PopupMakePage saveAndClose () {
+    public OverlayMakePage saveAndClose () {
         SAVE_AND_CLOSE.click();
         if (NO_LEAD_WARNING.exists()){
         NO_LEAD_WARNING.click();
@@ -115,7 +112,7 @@ public class PopupMakePage {
         return this;
     }
 
-    public PopupMakePage clickSaveAndPublish() {
+    public OverlayMakePage clickSaveAndPublish() {
         SAVE_AND_PUBLISH_BTN.click();
         System.out.println("новая кнопка");
         boolean isButtonDisplayed = SAVE_BTN_ALERT.isDisplayed();
@@ -126,7 +123,7 @@ public class PopupMakePage {
         return this;
     }
 
-    public PopupMakePage clickSave() {
+    public OverlayMakePage clickSave() {
         SAVE_BTN.click();
         System.out.println("новая кнопка");
         boolean isButtonDisplayed = SAVE_BTN_ALERT.isDisplayed();
@@ -138,7 +135,7 @@ public class PopupMakePage {
         return this;
     }
 
-    public PopupMakePage deleteAutoPopup() {
+    public OverlayMakePage deleteAutoPopup() {
         CLICK_ON_POPUP.click();
         DELETE_POPUP_MENU_BTN.shouldBe(Condition.enabled).shouldBe(Condition.visible).click();
         System.out.println("вызов меню");
@@ -149,7 +146,7 @@ public class PopupMakePage {
         return this;
 
     }
-    public PopupMakePage deletePopup() {
+    public OverlayMakePage deletePopup() {
         DELETE_POPUP_MENU_BTN.shouldBe(Condition.enabled).shouldBe(Condition.visible).click();
         System.out.println("вызов меню");
         POPUP_DEL_BTN.shouldBe(Condition.enabled).click();
@@ -159,7 +156,7 @@ public class PopupMakePage {
         return this;
     }
 
-    public PopupMakePage deleteLauncher() {
+    public OverlayMakePage deleteLauncher() {
 //        CLICK_ON_POPUP.click();
         DELETE_POPUP_MENU_BTN.shouldBe(Condition.enabled).shouldBe(Condition.visible).click();
         System.out.println("вызов меню");

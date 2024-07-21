@@ -18,9 +18,9 @@ public class HorizontalPopupTest extends BaseTest{
             NewMakePopupPage nmp = new NewMakePopupPage();
             nmp.newMakePopup();
             new HorizontalPopupPage().horizontalPopupChoose(i);
-            nmp.clickNext().makeName();
+            nmp.designClickNext().makeName();
             Thread.sleep(500);
-            nmp.clickNext();
+            nmp.targetClickNext();
             Thread.sleep(500);
 
 

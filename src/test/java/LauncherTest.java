@@ -1,5 +1,6 @@
 import Pages.LauncherPage;
-import Pages.PopupMakePage;
+import Pages.NewMakePopupPage;
+import Pages.OverlayMakePage;
 import org.junit.Test;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -13,9 +14,9 @@ public class LauncherTest  extends BaseTest{
         for (int i=1; i<=7; i++) {
             System.out.println(i);
             open(STATIC_PROJECT);
-            new PopupMakePage().makeNewPopup();
+            new NewMakePopupPage().newMakePopup();
             new LauncherPage().LauncherPageChoose(i);
-            new PopupMakePage().makeName().clickNext().clickNext().saveAndClose().deleteLauncher();
+            new OverlayMakePage().makeName().clickNext().clickNext().saveAndClose().deleteLauncher();
         }
     }
 

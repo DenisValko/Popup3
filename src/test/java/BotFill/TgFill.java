@@ -1,12 +1,13 @@
 package BotFill;
-import com.codeborne.selenide.Condition;
 
-import static org.example.constants.constants.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$x;
+
 public class TgFill {
     public TgFill() {
-//        TG_BOT_CHOOSE_DD.click();
-//        choose bot
-//        TELEGRAM_BOT_PICK.click();
-//        TELEGRAM_CHAIN.shouldBe(Condition.visible);
+        $x("//h1[text()=\" Telegram \"]").click();
+        $(" app-builder > div > app-element-editor > app-messenger-element > app-editor > div > div:nth-child(2) > div > div ").click();
+        $x("//a[text()=\" AutoBot \"]").click();
+        $(" app-builder > app-breadcrumb > ul > li:nth-child(2)").click();
     }
 }

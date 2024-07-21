@@ -27,7 +27,7 @@ public class constants {
 
     //locators
 
-    public static final SelenideElement TELEGRAM_BOT_PICK = $x("(//a[normalize-space()='AutoBot'])[1]");
+    public static final SelenideElement TELEGRAM_BOT_PICK = $("(//a[normalize-space()='AutoBot'])[1]");
     //Цепочка бота
     public static final SelenideElement TELEGRAM_CHAIN = $x("(//a[contains(text(),'Приветственная серия')])[1]");
 

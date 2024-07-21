@@ -21,7 +21,7 @@ public class NewMakePopupTest extends BaseTest{
         new NewMakePopupElementsPage().elementClick();
 //        тут написать выбор условий
 
-        nmpPage.clickNext().makeName().clickNext();
+        nmpPage.designClickNext().makeName().targetClickNext();
 //        тут сохранение в адрес книгу и ЦРМ
 
         nmpPage.saveAndClose().deleteAutoPopup();

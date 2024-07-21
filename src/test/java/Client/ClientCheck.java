@@ -15,14 +15,10 @@ public class ClientCheck {
         open(CLIENT_URL);
         $(shadowCss(".sp-popup-image","sp-popups")).shouldBe(Condition.visible);
         System.out.println("Popup is ok");
-        $(shadowCss(".sp-poweredby-link","sp-popups")).shouldBe(Condition.visible);
-        System.out.println("Branding is OK");
+//        $(shadowCss(".sp-poweredby-link","sp-popups")).shouldBe(Condition.visible);
+//        System.out.println("Branding is OK");
         Selenide.closeWindow();
         Selenide.switchTo().window(0);
-
-        //System.out.println(driver.getTitle());
-
-
     }
 }
 

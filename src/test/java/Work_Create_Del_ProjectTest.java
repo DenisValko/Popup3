@@ -2,10 +2,9 @@ import Pages.MainPage;
 import org.junit.Test;
 
 import static org.example.constants.constants.BASE_URL;
-import static org.example.constants.constants.STATIC_PROJECT;
 
 
-public class Create_Del_ProjectTest extends BaseTest {
+public class Work_Create_Del_ProjectTest extends BaseTest {
     /**
      * Тест создает и удаляет новый проект
      */
