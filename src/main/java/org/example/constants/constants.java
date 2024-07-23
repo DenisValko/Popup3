@@ -71,7 +71,9 @@ public class constants {
     public static final SelenideElement SAVE_BTN = $("app-targeting > div > div > div > button");
     public static final SelenideElement SAVE_BTN_ALERT = $("body > modal-container > div.modal-dialog > div > app-confirm > div.modal-footer > button.btn.btn-success.ng-star-inserted");
 
-    //сохранить и закрыть лаунчер без связки с попапом
+    // лаунчер
+    public static final SelenideElement LAUNCHER_POPUP_DEL_BTN = $x("//a[contains(text(),\"Удалить\")]");
+
 
     public static final SelenideElement SAVE_AND_CLOSE = $("#content-wrapper > app-root > app-constructor > app-layout > div > nav > app-header > div > div > div.sp-navbar-header-right > app-btn-controls > div");
 //    public static final SelenideElement TARGET_NEXT = $("app-btn-controls > div > button");

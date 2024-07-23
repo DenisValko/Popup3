@@ -26,7 +26,9 @@ public class NewMakePopupPage {
     private final String SAVING_SAVE = ("https://login.sendpulse.com/pop-ups/builder/ceb77478-19c6-4d70-b1a2-c3b28a9abd72/create/saving");
     private final SelenideElement SINGLE_POPUP = $("body > modal-container > div.modal-dialog > div > app-popup-type > div.modal-body > div > a:nth-child(1)");
     private final SelenideElement INLINE_POPUP = $("body > modal-container > div.modal-dialog > div > app-popup-type > div.modal-body > div > a:nth-child(2)");
-
+    private final SelenideElement CONDITION_AFTER_CLICK = $("//span[text()=\"После клика на лаунчер\"]");
+    private final SelenideElement CONDITION_CLICKS = $("//label[text()=\" Клики \"]");
+    private final SelenideElement CONDITION = $("//div[@class='form-control dropdown-custom dropdown-action']");
 
     public NewMakePopupPage newMakePopup() {
         MAKE_POPUP_BTN.click();
@@ -43,7 +45,6 @@ public class NewMakePopupPage {
             logger.info("***designClickNext***");
         }
         NEXT_BTN.shouldBe(Condition.exist).shouldBe(visible).click();
-//        NEXT_BTN.click();
         return this;
     }
     public NewMakePopupPage targetClickNext() {
@@ -82,34 +83,31 @@ public class NewMakePopupPage {
     public NewMakePopupPage deleteAutoPopup() {
         CLICK_ON_POPUP.click();
         DELETE_POPUP_MENU_BTN.shouldBe(Condition.enabled).shouldBe(Condition.visible).click();
-//        logger.info(()->"вызов меню");
         POPUP_DEL_BTN.shouldBe(Condition.enabled).click();
-//        logger.info(()->"клик на Удалить");
         MODAL_DEL_BTN.shouldBe(Condition.enabled).click();
-//        logger.info(()->"клик на Удалить В модалке");
         return this;
     }
-//    public PopupMakePage deletePopup() {
-//        DELETE_POPUP_MENU_BTN.shouldBe(Condition.enabled).shouldBe(Condition.visible).click();
-//        System.out.println("вызов меню");
-//        POPUP_DEL_BTN.shouldBe(Condition.enabled).click();
-//        System.out.println("клик на Удалить");
-//        MODAL_DEL_BTN.shouldBe(Condition.enabled).click();
-//        System.out.println("клик на Удалить В модалке");
-//        return this;
-//    }
-//
-//    public PopupMakePage deleteLauncher() {
-////        CLICK_ON_POPUP.click();
-//        DELETE_POPUP_MENU_BTN.shouldBe(Condition.enabled).shouldBe(Condition.visible).click();
-//        System.out.println("вызов меню");
-//        LAUNCHER_POPUP_DEL_BTN.shouldBe(Condition.enabled).click();
-//        System.out.println("клик на Удалить");
-//        MODAL_DEL_BTN.shouldBe(Condition.enabled).click();
-//        System.out.println("клик на Удалить В модалке");
-//        return this;
-//
-//    }
 
+    public NewMakePopupPage deleteLauncher() {
+        CLICK_ON_POPUP.click();
+        DELETE_POPUP_MENU_BTN.shouldBe(Condition.enabled).shouldBe(Condition.visible).click();
+        System.out.println("вызов меню");
+        LAUNCHER_POPUP_DEL_BTN.shouldBe(Condition.enabled).click();
+        System.out.println("клик на Удалить");
+        MODAL_DEL_BTN.shouldBe(Condition.enabled).click();
+        System.out.println("клик на Удалить В модалке");
+        return this;
+
+    }    public NewMakePopupPage conditionClickOnLauncher() {
+        CONDITION.click();
+        CONDITION_CLICKS.click();
+        CONDITION_AFTER_CLICK.click();
+        return this;
+    }
+//    }    public PopupMakePage conditionClickOnLauncher() {
+//        Select select1 = new Select(CONDITION);
+//        select1.selectByIndex(23);
+//        return this;
+//    }
 
 }

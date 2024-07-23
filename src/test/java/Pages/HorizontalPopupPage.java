@@ -1,11 +1,10 @@
 package Pages;
 
+import BotFill.FbFill;
+import BotFill.WaFill;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$x;
-import static org.example.constants.constants.FB_MESSENGER_CUSTOM_LINK_INPUT;
-import static org.example.constants.constants.WATSAPP_CUSTOM_LINK_INPUT;
 
 public class HorizontalPopupPage {
     private final SelenideElement MENU_HORIZONTAL = $(" app-sidebar > div > ul > li:nth-child(6) ");
@@ -23,6 +22,7 @@ public class HorizontalPopupPage {
 
     public void horizontalPopupChoose(int i) {
         MENU_HORIZONTAL.click();
+        MENU_HORIZONTAL.click();
         switch (i) {
             case 1:
                 POPUP_HORIZ1.click();
@@ -39,19 +39,21 @@ public class HorizontalPopupPage {
             case 5:
                 POPUP_HORIZ5.click();
                 break;
+
             case 6:
-                POPUP_HORIZ5.click();
-                break;
-//            case 6:
-//                POPUP_HORIZ6.click();
+                POPUP_HORIZ6.click();
+                new FbFill();
+                new WaFill();
+
+//
 //                $x("(//div[@class='dropdown-custom-toggle'])[4]").click();
 //                $x("(//a[contains(text(),'Указать свою ссылку')])[1]").click();
 //                FB_MESSENGER_CUSTOM_LINK_INPUT.sendKeys("https://m.me/example!!!!!");
 //                $x("(//div[@class='dropdown-custom-toggle'])[6]").click();
 //                $x("(//a[contains(text(),'Указать свою ссылку')])[2]").click();
 //                WATSAPP_CUSTOM_LINK_INPUT.sendKeys("https://m.me/WA!!!!!");
-//
-//                break;
+
+                break;
             case 7:
                 POPUP_HORIZ7.click();
                 break;
