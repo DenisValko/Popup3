@@ -12,7 +12,7 @@ public class FloatPopupTest extends BaseTest {
 
         for (int i = 9; i <= 9; i++) {
             System.out.println(i);
-//            Random random = new Random();
+//            Random random = new Random(); 234234234
 //            int j = random.nextInt(4) + 1;
             open(STATIC_PROJECT);
             open(STATIC_PROJECT);
