@@ -18,7 +18,8 @@ public class MainPage {
     private final SelenideElement skipBtn = $("button[class='btn btn-link']");
     private final SelenideElement createPopupBtn = $("a[type='button']");
     private final SelenideElement crossBtn = $(".visually-hidden");
-    private final SelenideElement projectMenu = $x("(//span[@class='glyphicon glyphicon-option-horizontal color-light'])[1]");
+    private final SelenideElement projectMenu = $x("//*[@id=\"button-animated\"]");
+//    private final SelenideElement projectMenu = $x("(//span[@class='glyphicon glyphicon-option-horizontal color-light'])[1]");
     private final SelenideElement nameOfProjectKill = $x("//a[contains(text(),'Удалить')]");
     private final SelenideElement pressDel = $x("//button[contains(text(),'Удалить')]");
 

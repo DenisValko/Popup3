@@ -12,6 +12,7 @@ public class WorkLauncherTest extends BaseTest{
 
         for (int i=1; i<=7; i++) {
             open(STATIC_PROJECT);
+            open(STATIC_PROJECT);
             new NewMakePopupPage().newMakePopup();
             new LauncherPage().LauncherPageChoose(i);
             new NewMakePopupPage().makeName().designClickNext().targetClickNext()

@@ -44,15 +44,6 @@ public class HorizontalPopupPage {
                 POPUP_HORIZ6.click();
                 new FbFill();
                 new WaFill();
-
-//
-//                $x("(//div[@class='dropdown-custom-toggle'])[4]").click();
-//                $x("(//a[contains(text(),'Указать свою ссылку')])[1]").click();
-//                FB_MESSENGER_CUSTOM_LINK_INPUT.sendKeys("https://m.me/example!!!!!");
-//                $x("(//div[@class='dropdown-custom-toggle'])[6]").click();
-//                $x("(//a[contains(text(),'Указать свою ссылку')])[2]").click();
-//                WATSAPP_CUSTOM_LINK_INPUT.sendKeys("https://m.me/WA!!!!!");
-
                 break;
             case 7:
                 POPUP_HORIZ7.click();

@@ -1,17 +1,8 @@
 package Pages;
 
 import BotFill.*;
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Condition.text;
-
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 import static org.example.constants.constants.*;
@@ -27,7 +18,7 @@ public class FloatPopupPage {
     private final SelenideElement POPUP_FLOAT6 = $("#content-wrapper > div.sp-templates > app-content > div > div:nth-child(7) > img");
     private final SelenideElement POPUP_FLOAT7 = $("#content-wrapper > div.sp-templates > app-content > div > div:nth-child(8) > img");
     private final SelenideElement POPUP_FLOAT8 = $("#content-wrapper > div.sp-templates > app-content > div > div:nth-child(9) > img");
-    private final SelenideElement POPUP_FLOAT9 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/2-popup-ru.png']");
+    private final SelenideElement POPUP_FLOAT9 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/popup-0200-castomfield-ru.png']");
     private final SelenideElement POPUP_FLOAT10 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/Womens-Day-006-ru.png']");
     private final SelenideElement POPUP_FLOAT11 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/Womens-Day-003-ru.png']");
     private final SelenideElement POPUP_FLOAT12 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/popup-0203-ru.png']");

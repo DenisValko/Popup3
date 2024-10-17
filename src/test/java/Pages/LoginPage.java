@@ -1,6 +1,7 @@
 package Pages;
 
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -22,6 +23,7 @@ public class LoginPage {
         if (isNeedEnter) {
             ENTER_ACCOUNT.click();
         }
+
     }
 
 }

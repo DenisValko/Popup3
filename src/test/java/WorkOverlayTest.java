@@ -11,6 +11,7 @@ public class WorkOverlayTest extends BaseTest {
     public void overlay() {
         for (int i = 1; i <= 11; i++) {
             open(STATIC_PROJECT);
+            open(STATIC_PROJECT);
             System.out.println(i);
             new NewMakePopupPage().newMakePopup();
             new OverlayMakePage().overlayPopupChoose(i);

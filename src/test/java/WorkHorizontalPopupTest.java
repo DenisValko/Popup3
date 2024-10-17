@@ -10,6 +10,7 @@ public class WorkHorizontalPopupTest extends BaseTest{
         public void HorizontalPopup(){
         for (int i=1; i<=11;i++) {
             open(STATIC_PROJECT);
+            open(STATIC_PROJECT);
             new NewMakePopupPage().newMakePopup();
             new HorizontalPopupPage().horizontalPopupChoose(i);
             new NewMakePopupPage().designClickNext().makeName()

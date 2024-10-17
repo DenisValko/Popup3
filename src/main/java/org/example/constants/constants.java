@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$x;
 public class constants {
 
     // popup_make_del
-    public static final String STATIC_PROJECT = "https://login.sendpulse.com/pop-ups/project/ceb77478-19c6-4d70-b1a2-c3b28a9abd72/";
+    public static final String STATIC_PROJECT = "https://login.sendpulse.com/pop-ups/project/1bf3a977-a1eb-47da-b20d-6681ffa30db7/";
 //    public static final String STATIC_PROJECT = "https://pre.sendpulse.com/pop-ups/project/ceb77478-19c6-4d70-b1a2-c3b28a9abd72/";
 //    public static final String STATIC_PROJECT = "https://popup-front-1.sendpulse.test/pop-ups/project/f7d0bf5f-e6b5-407e-bb0a-35a5f0246af6/popups";
     public static final String NAME_OF_NEW_PROJECT = "https://auto.html";
@@ -21,7 +21,7 @@ public class constants {
 //    public static final String ENVIRONMENT = "https://popup-front-1.sendpulse.test/login";   //front1
 
     public static final String PASS = "123456";
-    public static final String LOGIN = "d.valko+prod_auto@sendpulse.com";
+    public static final String LOGIN = "d.valko+prod_auto2@sendpulse.com";
     public static final String CLIENT_URL = "https://denisvalko.github.io/d.valko+prod_auto.html";
 //    public static final String CLIENT_URL = "https://denisvalko.github.io/d.valko+prod_auto_front1.html";
 

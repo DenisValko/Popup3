@@ -12,7 +12,8 @@ public class Work_Create_Del_ProjectTest extends BaseTest {
     @Test
     public void createProj() {
 
-        new MainPage().openPage(BASE_URL)
+        new MainPage()
+                .openPage(BASE_URL)
                 .makeNewProject()
                 .makeProjectName()
                 .clickGetCodeBtn()

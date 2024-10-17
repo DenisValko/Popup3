@@ -1,7 +1,6 @@
 package Pages;
 
 import com.codeborne.selenide.SelenideElement;
-//import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.support.ui.Select;
 
 import static com.codeborne.selenide.Selenide.$;

@@ -25,7 +25,7 @@ public class ShowScenarioStatisticsSum extends BaseTest {
          * Запрашиваем по апи PeopleRich
          */
         String url = "https://login.sendpulse.com/api/pop-ups/schema"; // адрес API
-        String requestBody = "{\"operationName\":\"showScenarioStatisticsSum\",\"variables\":{\"filter\":{\"scenarioId\":\"0aa2e798-ca4e-45d4-825f-ea89706e0e3e\"},\"locale\":\"ru\"},\"query\":\"query showScenarioStatisticsSum($first: Int, $offset: Int, $filter: ShowScenarioStatisticsSumFilterInterface, $locale: String) {\\n  showScenarioStatisticsSum(first: $first, offset: $offset, filter: $filter) {\\n    edges {\\n      peopleReached\\n      engagements\\n      startedDialogues\\n      formEngagements\\n      subscriptions\\n    }\\n    result(locale: $locale) {\\n      code\\n      errors {\\n        field\\n        message\\n      }\\n    }\\n  }\\n}\\n\"}"; // тело запроса в формате JSON
+        String requestBody = "{\"operationName\":\"showScenarioStatisticsSum\",\"variables\":{\"filter\":{\"scenarioId\":\"34b7604b-034d-4a2c-967d-056b8a01cdd9\"},\"locale\":\"ru\"},\"query\":\"query showScenarioStatisticsSum($first: Int, $offset: Int, $filter: ShowScenarioStatisticsSumFilterInterface, $locale: String) {\\n  showScenarioStatisticsSum(first: $first, offset: $offset, filter: $filter) {\\n    edges {\\n      peopleReached\\n      engagements\\n      startedDialogues\\n      formEngagements\\n      subscriptions\\n    }\\n    result(locale: $locale) {\\n      code\\n      errors {\\n        field\\n        message\\n      }\\n    }\\n  }\\n}\\n\"}"; // тело запроса в формате JSON
         String responseBody = given()
                 .header("content-type", "Application/json")
                 .header("authorization", GetToken())

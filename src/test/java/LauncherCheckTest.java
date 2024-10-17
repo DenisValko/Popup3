@@ -13,6 +13,7 @@ import static org.example.constants.constants.STATIC_PROJECT;
 public class LauncherCheckTest  extends BaseTest{
     @Test
     public void LauncherCheck() throws InterruptedException {
+
         open(STATIC_PROJECT);
         //создание попапа
         NewMakePopupPage page = new NewMakePopupPage();
@@ -27,18 +28,13 @@ public class LauncherCheckTest  extends BaseTest{
         page.makeName().designClickNext().targetClickNext().saveAndClose();
 
         SelenideElement autopopup = $x("//label[normalize-space()='autopopup']");
-//        autopopup.click();
         SelenideElement autolaunch = $x("(//label[normalize-space()='autopopup'])[2]");
         autolaunch.click();
         $(" div > div.btn-group.btn-edit").click();
-
-        Thread.sleep(4000);
         $x("//span[contains(text(),' Условия показа ')]").click();
 
-        Thread.sleep(4000);
-
         page.conditionClickOnLauncher();
-        page.saveAndClose();
+        page.save();
         //проверка
         executeJavaScript("window.open()");
         switchTo().window(1);
@@ -48,10 +44,10 @@ public class LauncherCheckTest  extends BaseTest{
         switchTo().window(0);
 
         //удаление
-        autopopup.click();
+        autolaunch.click();
         page.deleteLauncher();
-//        Thread.sleep(4000);
         autopopup.click();
+        Thread.sleep(500);
         page.deleteAutoPopup();
     }
 }
