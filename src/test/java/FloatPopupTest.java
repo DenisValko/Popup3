@@ -8,7 +8,7 @@ import static org.example.constants.constants.STATIC_PROJECT;
 public class FloatPopupTest extends BaseTest {
 
     @Test
-    public void floatPopup() throws InterruptedException {
+    public void floatPopup()  {
 
         for (int i = 9; i <= 9; i++) {
             System.out.println(i);
