@@ -19,7 +19,7 @@ public class FloatPopupPage {
     private final SelenideElement POPUP_FLOAT7 = $("#content-wrapper > div.sp-templates > app-content > div > div:nth-child(8) > img");
     private final SelenideElement POPUP_FLOAT8 = $("#content-wrapper > div.sp-templates > app-content > div > div:nth-child(9) > img");
     private final SelenideElement POPUP_FLOAT9 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/popup-0200-castomfield-ru.png']");
-    private final SelenideElement POPUP_FLOAT10 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/Womens-Day-006-ru.png']");
+    private final SelenideElement POPUP_FLOAT10 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/christmas-005-ru.png']");
     private final SelenideElement POPUP_FLOAT11 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/Womens-Day-003-ru.png']");
     private final SelenideElement POPUP_FLOAT12 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/popup-0203-ru.png']");
     private final SelenideElement POPUP_FLOAT13 = $("img[src='https://d3ppax5trsa9bf.cloudfront.net/popup_templates/popup-0200-ru.png']");

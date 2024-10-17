@@ -101,7 +101,7 @@ public class NewMakePopupPage {
         CLICK_ON_POPUP.shouldBe(Condition.visible, Duration.ofSeconds(10)).click();
         DELETE_POPUP_MENU_BTN.shouldBe(Condition.visible, Duration.ofSeconds(10)).click();
         POPUP_DEL_BTN.shouldBe(Condition.enabled).click();
-        MODAL_DEL_BTN.shouldBe(Condition.enabled).click();
+        MODAL_DEL_BTN.shouldBe(Condition.visible, Duration.ofSeconds(10)).click();
         return this;
     }
 

@@ -1,16 +1,13 @@
 package Pages;
 
-
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.ui.Select;
-
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class LauncherPage {
-    private final SelenideElement MENU_Launcher = $x("(//span[contains(text(),'Лаунчер')])[1]");
-
+    private final SelenideElement MENU_Launcher = $x("//span[contains(text(),'Лаунчер')]");
     private final SelenideElement POPUP_LAUNCHER1 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/launcher-discount-ru.png']");
     private final SelenideElement POPUP_LAUNCHER2 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/launcher-bubble.png']");
     private final SelenideElement POPUP_LAUNCHER3 = $("img[src='https://pop-ups.sendpulse.com/popup_templates/launcher-fire.png']");
@@ -23,8 +20,7 @@ public class LauncherPage {
 
 
     public LauncherPage LauncherPageChoose (int i) {
-        MENU_Launcher.click();
-        MENU_Launcher.click();
+        MENU_Launcher.shouldBe(Condition.enabled).click();
         switch (i) {
             case 1:
                 POPUP_LAUNCHER1.shouldBe(Condition.visible);

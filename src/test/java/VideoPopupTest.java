@@ -1,12 +1,11 @@
 import Pages.NewMakePopupPage;
 import Pages.VideoPopupPage;
-import com.codeborne.selenide.Selenide;
 import org.junit.Test;
 
 import static com.codeborne.selenide.Selenide.open;
 import static org.example.constants.constants.STATIC_PROJECT;
 
-public class WorkVideoPopupTest extends BaseTest{
+public class VideoPopupTest extends BaseTest{
 
     @Test
     public void videoPopup(){

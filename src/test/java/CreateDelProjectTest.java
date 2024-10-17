@@ -4,7 +4,7 @@ import org.junit.Test;
 import static org.example.constants.constants.BASE_URL;
 
 
-public class Work_Create_Del_ProjectTest extends BaseTest {
+public class CreateDelProjectTest extends BaseTest {
     /**
      * Тест создает и удаляет новый проект
      */

@@ -5,7 +5,7 @@ import org.junit.Test;
 import static com.codeborne.selenide.Selenide.open;
 import static org.example.constants.constants.STATIC_PROJECT;
 
-public class WorkLauncherTest extends BaseTest{
+public class LauncherTest extends BaseTest{
 
     @Test
     public void Launcher(){

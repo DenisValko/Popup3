@@ -2,7 +2,7 @@ import Client.ClientCheck;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class WorkPeopleReachedTest extends BaseTest{
+public class PeopleReachedTest extends BaseTest{
     @Test
             public void StatCheck() {
         //получение пиплРич до  проверки клиента(via api)

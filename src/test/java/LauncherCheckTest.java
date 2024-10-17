@@ -10,17 +10,21 @@ import static com.codeborne.selenide.Selenide.*;
 import static org.example.constants.constants.CLIENT_URL;
 import static org.example.constants.constants.STATIC_PROJECT;
 
-public class LauncherCheckTest  extends BaseTest{
+public class LauncherCheckTest extends BaseTest{
     @Test
     public void LauncherCheck() throws InterruptedException {
 
         open(STATIC_PROJECT);
+        open(STATIC_PROJECT);
         //создание попапа
         NewMakePopupPage page = new NewMakePopupPage();
         page.newMakePopup();
-        new FloatPopupPage().floatPopupChoose(2);
+        new FloatPopupPage().floatPopupChoose(10);
         page.makeName().designClickNext().targetClickNext().saveAndClose();
-
+        System.out.println("Не убирать - это задержка");
+        System.out.println("Не убирать - это задержка");
+        System.out.println("Не убирать - это задержка");
+        System.out.println("Не убирать - это задержка");
         //создание лаунчера
         page.newMakePopup();
         LauncherPage lPage = new LauncherPage();
@@ -47,7 +51,9 @@ public class LauncherCheckTest  extends BaseTest{
         autolaunch.click();
         page.deleteLauncher();
         autopopup.click();
-        Thread.sleep(500);
+        System.out.println("blyaaaa");
+        Thread.sleep(1000);
         page.deleteAutoPopup();
+
     }
 }
