@@ -1,43 +1,30 @@
-## Используйте базовый образ Java
-#FROM nocoolming/redhat-openjdk-18
-#
-## Установите рабочую директорию
-#WORKDIR /app
-#
-## Скопируйте ваш JAR файл в образ
-#COPY target/Popup3-1.0.jar app.jar
-#
-## Установите команду для запуска приложения
-#CMD ["java", "-jar", "app.jar"]
-# Используем образ с Java 18
-# Используем образ с Java 18
-# Используем образ с Java 18 на основе Debian
-# Используем образ с Java 18 на основе Debian
-FROM eclipse-temurin:18-jdk-jammy
+# Используем образ Selenium с Chrome
+FROM selenium/standalone-chrome
 
-# Устанавливаем обновления и необходимые пакеты
-RUN apt-get update && \
-    apt-get install -y wget gnupg2 unzip maven && \
-    wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
-    echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list && \
-    apt-get update && \
-    apt-get install -y google-chrome-stable
+# Переходим к пользователю root
+USER root
 
-# Устанавливаем ChromeDriver
-
-
-# Устанавливаем xvfb для запуска без дисплея
-RUN apt-get install -y xvfb
-
-# Устанавливаем директорию для приложения
+# Устанавливаем рабочую директорию
 WORKDIR /app
 
-# Копируем файлы проекта
-COPY . /app
+# Обновляем пакетный менеджер и устанавливаем необходимые пакеты
+RUN apt-get update && \
+    apt-get install -y maven xvfb wget unzip curl gnupg && \
+    apt-get clean
 
-# Устанавливаем зависимости и собираем проект
-RUN #mvn clean package
+# Копируем файлы проекта в контейнер
+COPY pom.xml ./
+# Сначала копируем pom.xml для кэширования зависимостей
+COPY . .
 
-# Команда для запуска тестов
-ENTRYPOINT ["bash"]
-#CMD ["xvfb-run", "-a", "java", "-jar", "target/Popup3.jar"]
+# Устанавливаем права на выполнение для Maven Wrapper
+RUN chmod +x mvnw
+
+# Установка переменной окружной JAVA_HOME
+ENV JAVA_HOME=/usr
+
+# Собираем проект
+RUN ./mvnw clean package
+
+# Указываем команду по умолчанию
+CMD ["tail", "-f", "/dev/null"]
