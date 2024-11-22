@@ -1,12 +1,12 @@
 package org.example;
 
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.example.Pages.LoginPage;
-    import com.codeborne.selenide.Configuration;
-    import com.codeborne.selenide.Selenide;
-    import io.github.bonigarcia.wdm.WebDriverManager;
-    import org.junit.After;
-    import org.junit.Before;
-    import org.openqa.selenium.chrome.ChromeOptions;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.openqa.selenium.chrome.ChromeOptions;
 
     abstract public class BaseTest {
         public void setUp() {
@@ -22,18 +22,17 @@ import org.example.Pages.LoginPage;
             WebDriverManager.chromedriver().setup();
             Configuration.timeout = 10000;
 
-
-//            Configuration.headless = true;   c 129й версии хедлесс задается так ("--headless=old")
+         //   Configuration.headless = true;  // c 129й версии хедлесс задается так ("--headless=old")
             LoginPage loginPage = new LoginPage();
             loginPage.login();
         }
 
-        @Before
+        @BeforeEach
         public void init() {
             setUp();
         }
 
-        @After
+        @AfterEach
         public void tearDown() {
             Selenide.closeWebDriver();
         }

@@ -2,7 +2,7 @@ package org.example;
 
 import org.example.Pages.NewMakePopupPage;
 import org.example.Pages.VideoPopupPage;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.open;
 import static org.example.constants.constants.STATIC_PROJECT;

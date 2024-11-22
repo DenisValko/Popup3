@@ -1,11 +1,11 @@
 package org.example;
 
+import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideElement;
 import org.example.Pages.FloatPopupPage;
 import org.example.Pages.LauncherPage;
 import org.example.Pages.NewMakePopupPage;
-import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.SelenideElement;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selectors.shadowCss;
 import static com.codeborne.selenide.Selenide.*;
@@ -53,7 +53,6 @@ public class LauncherCheckTest extends BaseTest{
         autolaunch.click();
         page.deleteLauncher();
         autopopup.click();
-        System.out.println("blyaaaa");
         Thread.sleep(1000);
         page.deleteAutoPopup();
 

@@ -1,10 +1,11 @@
 package org.example;
 
 import com.codeborne.selenide.WebDriverRunner;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.openqa.selenium.Cookie;
+
+import java.io.IOException;
 
 import static io.restassured.RestAssured.given;
 
@@ -45,7 +46,7 @@ public class ShowScenarioStatisticsSum extends BaseTest {
         JsonNode jsonNode;
         try {
             jsonNode = objectMapper.readTree(responseBody);
-        } catch (JsonProcessingException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
         System.out.println("Содержимое ответа" + jsonNode);

@@ -1,7 +1,7 @@
 package org.example;
 
 import org.example.Pages.MainPage;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.example.constants.constants.BASE_URL;
 

@@ -1,8 +1,9 @@
 package org.example;
 
+
 import org.example.Client.ClientCheck;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class PeopleReachedTest extends BaseTest{
     @Test
@@ -15,5 +16,5 @@ public class PeopleReachedTest extends BaseTest{
 
         int increment = oldStat + 1;
         int newStat = new ShowScenarioStatisticsSum().showStat();
-        Assert.assertEquals(increment, newStat);
+        Assertions.assertEquals(increment, newStat);
     }}
