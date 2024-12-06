@@ -16,7 +16,7 @@ public class NewMakePopupPage {
     private final SelenideElement MAKE_FROM_BLANK_BTN = $("div.sp-templates-item.sp-templates-default > img");
     private final SelenideElement CLICK_ON_NAME_CHANGE = $("app-popup-name > div > span > i");
     private final SelenideElement NEW_POPUP_NAME_INPUT = $("app-popup-name > div > div > app-input-text > div > input");
-    private final SelenideElement DELETE_POPUP_MENU_BTN = $("div.project-preview-heading> div > div.btn-group> div");
+    private final SelenideElement DELETE_POPUP_MENU_BTN = $x("//button[@id='button-animated' and @aria-controls='dropdown-animated' and contains(@class, 'dropdown-toggle')]");
 //    private final SelenideElement LAUNCHER_POPUP_DEL_BTN = $x("(//a[contains(text(),'Удалить')])[1]");
     private final SelenideElement POPUP_DEL_BTN = $x("(//a[contains(text(),'Удалить')])");
 //    private final SelenideElement POPUP_DEL_BTN = $("#dropdown-animated > li:nth-child(2)");

@@ -11,16 +11,19 @@ import org.openqa.selenium.chrome.ChromeOptions;
     abstract public class BaseTest {
         public void setUp() {
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless=old");
-//            Configuration.holdBrowserOpen = true;
+//            options.addArguments("--headless=old");
+            Configuration.holdBrowserOpen = true;
             options.addArguments("--disable-notifications"); //для head
             options.addArguments("--disable-extensions");      //для headless
             options.addArguments("--window-size=1920,1080");
-            options.addArguments("--incognito");
-            options.addArguments("--disable-gpu"); //попытка вырубить фрейм браузера
+//            options.addArguments("--incognito");
+            options.addArguments("--disable-gpu"); //попытка вырубить фрейм браузера(успешная)
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+
             Configuration.browserCapabilities.setCapability(ChromeOptions.CAPABILITY, options);
-            WebDriverManager.chromedriver().setup();
             Configuration.timeout = 10000;
+            WebDriverManager.chromedriver().setup();
 
          //   Configuration.headless = true;  // c 129й версии хедлесс задается так ("--headless=old")
             LoginPage loginPage = new LoginPage();

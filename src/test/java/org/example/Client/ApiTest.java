@@ -1,14 +1,15 @@
-//package Client;
+//package org.example.Client;
 //
 //import io.restassured.RestAssured;
+//import org.junit.jupiter.api.Test;
 //
 //import static io.restassured.RestAssured.given;
 //import static org.example.constants.constants.BASE_URL;
 //import static org.example.constants.constants.BODY_SHOW_USER_PLAN;
 //import static org.hamcrest.Matchers.equalTo;
 //
-//public class ApiCheck {
-//
+//public class ApiTest {
+//@Test
 //    public void ShowUserPlans() {
 //
 //        RestAssured.baseURI = BASE_URL;
@@ -28,7 +29,7 @@
 //                .and().body("data.showUserPlans.result.code", equalTo(200));
 //
 //    }
-//
+//@Test
 //    public void showPopup() {
 //
 //        RestAssured.baseURI = BASE_URL;

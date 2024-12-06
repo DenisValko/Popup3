@@ -3,7 +3,6 @@ package org.example.Client;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 
-
 import static com.codeborne.selenide.Selectors.shadowCss;
 import static com.codeborne.selenide.Selenide.*;
 import static org.example.constants.constants.CLIENT_URL;

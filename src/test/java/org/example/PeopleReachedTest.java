@@ -3,9 +3,11 @@ package org.example;
 
 import org.example.Client.ClientCheck;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
 public class PeopleReachedTest extends BaseTest{
+    @Order(1)
     @Test
             public void StatCheck() {
         //получение пиплРич до  проверки клиента(via api)

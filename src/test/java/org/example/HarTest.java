@@ -29,14 +29,17 @@ public class HarTest {
         Proxy seleniumProxy = ClientUtil.createSeleniumProxy(proxy);
 
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless=old");
         options.setProxy(seleniumProxy);
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver(options);
+//        options.addArguments("--headless=old");
+//            Configuration.holdBrowserOpen = true;
         options.addArguments("--disable-notifications"); //для head
         options.addArguments("--disable-extensions");      //для headless
-
+        options.addArguments("--window-size=1920,1080");
+//            options.addArguments("--incognito");
+        options.addArguments("--disable-gpu"); //попытка вырубить фрейм браузера
         proxy.newHar("example");
 
         driver.get("https://login.sendpulse.com/pop-ups/main");
@@ -62,7 +65,6 @@ public class HarTest {
         driver.get("https://login.sendpulse.com/pop-ups/project/1bf3a977-a1eb-47da-b20d-6681ffa30db7/settings/code");
         Thread.sleep(2000);
         driver.get("https://login.sendpulse.com/pop-ups/project/1bf3a977-a1eb-47da-b20d-6681ffa30db7/settings/variables");
-        Thread.sleep(2000);
         Thread.sleep(2000);
         driver.findElement(By.partialLinkText("Добавить попап")).click();
         Thread.sleep(2000);
