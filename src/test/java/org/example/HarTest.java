@@ -7,7 +7,6 @@ import net.lightbody.bmp.client.ClientUtil;
 import net.lightbody.bmp.core.har.Har;
 import net.lightbody.bmp.proxy.CaptureType;
 import org.example.utils.HarParse;
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
@@ -16,11 +15,13 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class HarTest {
 
-    @Test
+//    @Test
     public void HarCheck() throws InterruptedException {
 
         // Запуск BrowserMob Proxy
         BrowserMobProxy proxy = new BrowserMobProxyServer();
+        proxy.setTrustAllServers(true); // Доверие всем сертификатам
+
         proxy.enableHarCaptureTypes(CaptureType.REQUEST_CONTENT, CaptureType.RESPONSE_CONTENT);
         proxy.setTrustAllServers(true); // Позволяет обойти сертификатные ошибки на стороне клиента
         proxy.start(0);

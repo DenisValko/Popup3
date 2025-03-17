@@ -1,28 +1,42 @@
-# Используем официальный образ с Java 17
-FROM eclipse-temurin:17-jdk
+FROM openjdk:17-jdk-slim
 
-# Устанавливаем необходимые зависимости для Chrome и других инструментов
-RUN apt-get update && apt-get install -y \
+ENV DEBIAN_FRONTEND=noninteractive
+ENV JAVA_HOME=/usr/local/openjdk-17
+ENV PATH="$JAVA_HOME/bin:$PATH"
+
+#  зависимости для Google Chrome и работы с .deb файлами
+RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
+    curl\
+    gnupg \
     unzip \
-    curl \
-    xvfb \
-    chromium \
-    chromium-driver \
+    ca-certificates \
     fonts-liberation \
-    && rm -rf /var/lib/apt/lists/*
+    libappindicator3-1 \
+    libasound2 \
+    libatk-bridge2.0-0 \
+    libcups2 \
+    libgbm1 \
+    libgtk-3-0 \
+    libnspr4 \
+    libnss3 \
+    lsb-release \
+    xdg-utils \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Устанавливаем Maven для сборки и управления проектом
-RUN apt-get update && apt-get install -y maven && rm -rf /var/lib/apt/lists/*
+ENV MAVEN_HOME=/opt/apache-maven-${MAVEN_VERSION}
+ENV PATH="${MAVEN_HOME}/bin:${PATH}"
 
-# Настраиваем рабочую директорию
+ARG MAVEN_VERSION=3.9.5
+RUN curl -fsSL https://downloads.apache.org/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz | tar -xz -C /opt && \
+    ln -s /opt/apache-maven-${MAVEN_VERSION}/bin/mvn /usr/bin/mvn
+
+# Google Chrome
+RUN wget -q -O /tmp/google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
+    apt-get update && apt-get install -y ./tmp/google-chrome.deb && \
+    rm /tmp/google-chrome.deb
+
 WORKDIR /app
 
-# Копируем файлы проекта в контейнер
-COPY . /app
+COPY . /app/
 
-# Устанавливаем переменные окружения для headless-режима
-ENV DISPLAY=:99
-
-# Компилируем и запускаем тесты через Maven   !********************docker run --memory=2g
-CMD ["mvn", "clean", "test"]
